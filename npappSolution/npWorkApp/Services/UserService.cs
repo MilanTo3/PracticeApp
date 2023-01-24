@@ -52,7 +52,7 @@ public class UserService : IUser
         var tokenHandler = new JwtSecurityTokenHandler();
         var securityToken = tokenHandler.CreateToken(tokenDescriptor);
         
-        TokenDto userDto = new TokenDto() { email=loginUser.email, token = tokenHandler.WriteToken(securityToken) };
+        TokenDto userDto = new TokenDto() { name=user.name, role=user.role, email=loginUser.email, token = tokenHandler.WriteToken(securityToken) };
 
         return userDto;
     }
