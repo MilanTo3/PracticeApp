@@ -4,6 +4,11 @@
 	box-sizing: border-box;
 }
 
+body{
+	background: linear-gradient(to right, firebrick, #FF416C);
+
+}
+
 h1 {
 	font-weight: bold;
 	margin: 0;
