@@ -1,23 +1,38 @@
 using Microsoft.EntityFrameworkCore;
-using npWorkApp.DbData;
+using ServicesAbstraction;
+using Services;
+using Domain.Repositories;
+using Persistence.Repositories;
+using Persistence;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using npWorkApp.Models.Interfaces;
-using npWorkApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("ConnStr");
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddApplicationPart(typeof(Presentation.AssemblyReference).Assembly);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+JWTSetting setting = new JWTSetting();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
+    options.TokenValidationParameters = new TokenValidationParameters{
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(setting.Key)),
+        ValidateIssuer = false,
+        ValidateAudience = false
+    };
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(p => p.AddPolicy("corspolicy", build => {
     build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
 }));
-builder.Services.AddDbContext<DbDataContext>(options => options.UseSqlServer(connectionString));
-builder.Services.AddScoped<IUser, UserService>();
+
+builder.Services.AddScoped<IServiceManager, ServiceManager>();
+builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
+builder.Services.AddDbContext<RepositoryDbContext>(options => options.UseSqlServer(connectionString));
 
 var app = builder.Build();
 app.UseCors("corspolicy");

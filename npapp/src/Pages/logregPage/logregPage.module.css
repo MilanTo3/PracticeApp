@@ -5,7 +5,8 @@
 }
 
 body{
-	background: linear-gradient(to right, firebrick, #FF416C);
+	background: linear-gradient(to right, #F9D976, #F39F86);
+
 
 }
 
@@ -97,6 +98,7 @@ input, select {
 	position: relative;
 	overflow: hidden;
 	width: 800px;
+	
 	max-width: 100%;
 	min-height: 600px;
     margin: auto;

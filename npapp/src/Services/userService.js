@@ -23,7 +23,7 @@ const registerUser = (formData) => {
 }
 
 const loginUser = (formData) => {
-    console.log(formData);
+
     return axios.post(authBase + "loginUser", formData);
 }
 
