@@ -12,6 +12,8 @@ public class RepositoryDbContext: DbContext
     }
 
     public DbSet<User>? Users { get; set; }
+    public DbSet<Toilet>? Toilets{get;set;}
+    public DbSet<Feedback>? Feedbacks{get;set;}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) =>
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(RepositoryDbContext).Assembly);

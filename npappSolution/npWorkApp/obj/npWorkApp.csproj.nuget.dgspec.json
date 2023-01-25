@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\npWorkApp\\npWorkApp.csproj": {}
+    "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\npWorkApp\\npWorkApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Contracts\\Contracts.csproj": {
+    "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Contracts\\Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Contracts\\Contracts.csproj",
+        "projectUniqueName": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Contracts\\Contracts.csproj",
         "projectName": "Contracts",
-        "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Contracts\\Contracts.csproj",
-        "packagesPath": "C:\\Users\\Praksa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Contracts\\obj\\",
+        "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Contracts\\Contracts.csproj",
+        "packagesPath": "C:\\Users\\wishm\\.nuget\\packages\\",
+        "outputPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Praksa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\wishm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,34 +55,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Domain\\Domain.csproj": {
+    "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Domain\\Domain.csproj",
+        "projectUniqueName": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Praksa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Domain\\obj\\",
+        "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\wishm\\.nuget\\packages\\",
+        "outputPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Praksa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\wishm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Contracts\\Contracts.csproj": {
-                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Contracts\\Contracts.csproj"
+              "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Contracts\\Contracts.csproj": {
+                "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Contracts\\Contracts.csproj"
               }
             }
           }
@@ -110,46 +114,48 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\npWorkApp\\npWorkApp.csproj": {
+    "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\npWorkApp\\npWorkApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\npWorkApp\\npWorkApp.csproj",
+        "projectUniqueName": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\npWorkApp\\npWorkApp.csproj",
         "projectName": "npWorkApp",
-        "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\npWorkApp\\npWorkApp.csproj",
-        "packagesPath": "C:\\Users\\Praksa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\npWorkApp\\obj\\",
+        "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\npWorkApp\\npWorkApp.csproj",
+        "packagesPath": "C:\\Users\\wishm\\.nuget\\packages\\",
+        "outputPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\npWorkApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Praksa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\wishm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Domain\\Domain.csproj"
+              "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Domain\\Domain.csproj": {
+                "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\Persistence.csproj": {
-                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\Persistence.csproj"
+              "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Persistence\\Persistence.csproj": {
+                "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Persistence\\Persistence.csproj"
               },
-              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Presentation\\Presentation.csproj": {
-                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Presentation\\Presentation.csproj"
+              "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Presentation\\Presentation.csproj": {
+                "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Presentation\\Presentation.csproj"
               },
-              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj": {
-                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj"
+              "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj": {
+                "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj"
               },
-              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj": {
-                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj"
+              "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Services\\Services.csproj": {
+                "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Services\\Services.csproj"
               }
             }
           }
@@ -220,37 +226,39 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\Persistence.csproj": {
+    "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\Persistence.csproj",
-        "packagesPath": "C:\\Users\\Praksa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\obj\\",
+        "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Persistence\\Persistence.csproj",
+        "packagesPath": "C:\\Users\\wishm\\.nuget\\packages\\",
+        "outputPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Praksa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\wishm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Contracts\\Contracts.csproj": {
-                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Contracts\\Contracts.csproj"
+              "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Contracts\\Contracts.csproj": {
+                "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Contracts\\Contracts.csproj"
               },
-              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Domain\\Domain.csproj"
+              "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Domain\\Domain.csproj": {
+                "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Domain\\Domain.csproj"
               }
             }
           }
@@ -302,40 +310,42 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Presentation\\Presentation.csproj": {
+    "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Presentation\\Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Presentation\\Presentation.csproj",
+        "projectUniqueName": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Presentation\\Presentation.csproj",
         "projectName": "Presentation",
-        "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Presentation\\Presentation.csproj",
-        "packagesPath": "C:\\Users\\Praksa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Presentation\\obj\\",
+        "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Presentation\\Presentation.csproj",
+        "packagesPath": "C:\\Users\\wishm\\.nuget\\packages\\",
+        "outputPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Presentation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Praksa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\wishm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Contracts\\Contracts.csproj": {
-                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Contracts\\Contracts.csproj"
+              "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Contracts\\Contracts.csproj": {
+                "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Contracts\\Contracts.csproj"
               },
-              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj": {
-                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj"
+              "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj": {
+                "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj"
               },
-              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj": {
-                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj"
+              "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Services\\Services.csproj": {
+                "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Services\\Services.csproj"
               }
             }
           }
@@ -383,37 +393,39 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj": {
+    "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj",
+        "projectUniqueName": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj",
         "projectName": "ServicesAbstraction",
-        "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj",
-        "packagesPath": "C:\\Users\\Praksa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\ServicesAbstraction\\obj\\",
+        "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj",
+        "packagesPath": "C:\\Users\\wishm\\.nuget\\packages\\",
+        "outputPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\ServicesAbstraction\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Praksa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\wishm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Contracts\\Contracts.csproj": {
-                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Contracts\\Contracts.csproj"
+              "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Contracts\\Contracts.csproj": {
+                "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Contracts\\Contracts.csproj"
               },
-              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Domain\\Domain.csproj"
+              "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Domain\\Domain.csproj": {
+                "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Domain\\Domain.csproj"
               }
             }
           }
@@ -443,40 +455,42 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj": {
+    "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj",
+        "projectUniqueName": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\Praksa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\obj\\",
+        "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\wishm\\.nuget\\packages\\",
+        "outputPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Praksa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\wishm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Contracts\\Contracts.csproj": {
-                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Contracts\\Contracts.csproj"
+              "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Contracts\\Contracts.csproj": {
+                "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Contracts\\Contracts.csproj"
               },
-              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Domain\\Domain.csproj"
+              "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Domain\\Domain.csproj": {
+                "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj": {
-                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj"
+              "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj": {
+                "projectPath": "e:\\DunavNetPraksa\\PracticeApp\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj"
               }
             }
           }
@@ -524,7 +538,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

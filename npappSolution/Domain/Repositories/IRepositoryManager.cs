@@ -10,4 +10,6 @@ public interface IRepositoryManager
 {
     IUnitofWork UnitOfWork {get;}
     IUserRepository userRepository{get;}
+    IToiletRepository toiletRepository{get;}
+    IFeedbackRepository feedbackRepository{get;}
 }
