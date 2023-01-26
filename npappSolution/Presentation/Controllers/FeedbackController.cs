@@ -29,11 +29,39 @@ public class FeedbackController : ControllerBase
     [HttpPost]
     [AllowAnonymous]
     [Route("addFeedback")]
-    public async Task<IActionResult> AddUser(FeedbackDto fback){
+    public async Task<IActionResult> AddFeedback(FeedbackDto fback){
     
         await _serviceManager.FeedbackService.CreateAsync(fback);
 
         return Ok();
+    }
+
+    [HttpDelete]
+    [AllowAnonymous]
+    [Route("{id}")]
+    public async Task<IActionResult> DeleteFeedback(long id){
+    
+        await _serviceManager.FeedbackService.DeleteAsync(id);
+
+        return Ok();
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetFeedbacks()
+    {
+        var screenings = await _serviceManager.FeedbackService.GetAllAsync();
+
+        return Ok(screenings);
+    }
+
+    [HttpGet]
+    [AllowAnonymous]
+    [Route("{id}")]
+    public async Task<IActionResult> GetOneFeedback(long id) {
+
+        FeedbackDto screening = await _serviceManager.FeedbackService.GetByIdAsync(id);
+
+        return Ok(screening);
     }
 
 

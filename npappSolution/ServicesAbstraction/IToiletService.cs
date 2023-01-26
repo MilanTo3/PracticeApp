@@ -11,4 +11,6 @@ public interface IToiletService
     Task<ToiletDto> CreateAsync(ToiletDto dto);
 
     Task<bool> DeleteAsync(long toiletId);
+
+    Task<bool> UpdateAsync(ToiletDto dto);
 }

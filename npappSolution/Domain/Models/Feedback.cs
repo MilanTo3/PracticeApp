@@ -10,7 +10,9 @@ public class Feedback
 {
     [Key]
     public long feedbackId{get;set;}
+    public long toiletId{get;set;}
     public DateTime time{get;set;}
     public string gradeOverall{get;set;}
+    public Toilet Toilet{get;set;}
     
 }

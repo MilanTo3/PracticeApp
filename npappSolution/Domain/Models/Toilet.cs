@@ -8,11 +8,15 @@ namespace Domain.Models;
 
 public class Toilet
 {
+    public Toilet(){
+        Feedbacks = new List<Feedback>();
+    }
+    
     [Key]
     public long toiletId{get;set;}
     public string name{get;set;}
     public string location{get;set;}
     public string gender{get;set;}
-    
+    public ICollection<Feedback> Feedbacks{get;set;}
 
 }

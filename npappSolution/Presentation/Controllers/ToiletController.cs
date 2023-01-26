@@ -26,5 +26,51 @@ public class ToiletController : ControllerBase
         _serviceManager = serviceManager;
     }
 
+    [HttpPost]
+    [AllowAnonymous]
+    [Route("addToilet")]
+    public async Task<IActionResult> AddToilet(ToiletDto fback){
+    
+        await _serviceManager.ToiletService.CreateAsync(fback);
+
+        return Ok();
+    }
+
+    [HttpDelete]
+    [AllowAnonymous]
+    [Route("{id}")]
+    public async Task<IActionResult> DeleteToilet(long id){
+    
+        await _serviceManager.ToiletService.DeleteAsync(id);
+
+        return Ok();
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetToilets()
+    {
+        var toilets = await _serviceManager.ToiletService.GetAllAsync();
+
+        return Ok(toilets);
+    }
+
+    [HttpGet]
+    [AllowAnonymous]
+    [Route("{id}")]
+    public async Task<IActionResult> GetOneToilet(long id) {
+
+        ToiletDto toilet = await _serviceManager.ToiletService.GetByIdAsync(id);
+
+        return Ok(toilet);
+    }
+
+    [HttpPut]
+    [AllowAnonymous]
+    public async Task<IActionResult> UpdateToilet(ToiletDto dto){
+
+        await _serviceManager.ToiletService.UpdateAsync(dto);
+
+        return Ok();
+    }
 
 }

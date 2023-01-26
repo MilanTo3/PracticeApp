@@ -4,6 +4,6 @@ namespace Domain.Repositories;
 
 public interface IFeedbackRepository: IGenericRepository<Feedback>
 {
-
+    
     
 }

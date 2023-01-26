@@ -7,9 +7,6 @@ using System.Text;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using System.Text;
-using System.Security.Claims;
-using Microsoft.IdentityModel.Tokens;
 
 namespace Services;
 
@@ -64,4 +61,13 @@ public class ToiletService : IToiletService
         return deleted;
     }
 
+    public async Task<bool> UpdateAsync(ToiletDto dto)
+    {
+        
+        var entity = dto.Adapt<Toilet>();
+        bool updated = await _repositoryManager.toiletRepository.UpdateToilet(entity);
+        await _repositoryManager.UnitOfWork.Complete();
+
+        return updated;
+    }
 }

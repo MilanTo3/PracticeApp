@@ -11,6 +11,7 @@ public class ToiletConfiguration: IEntityTypeConfiguration<Toilet>
         builder.ToTable(nameof(Toilet));
         builder.HasKey(toilet => toilet.toiletId);
         builder.Property(toilet => toilet.toiletId).ValueGeneratedOnAdd();
+        
     }
 
 }

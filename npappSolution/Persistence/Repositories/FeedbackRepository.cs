@@ -15,4 +15,21 @@ public class FeedbackRepository: GenericRepository<Feedback>, IFeedbackRepositor
     public FeedbackRepository(RepositoryDbContext _context): base(_context) {
         cont = _context;
     }
+
+    public override async Task<bool> Delete(long id) {
+
+        try {
+            var exist = await dbSet.Where(x => x.feedbackId == id).FirstOrDefaultAsync();
+            if (exist == null) {
+                return false;
+            }
+
+            cont.Feedbacks.Remove(exist);
+            
+        }catch(Exception ex) {
+            return false;
+        }
+
+        return true;
+    }
 }

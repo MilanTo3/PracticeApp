@@ -2,8 +2,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Security.Principal;
 using System.Security.Claims;
-using System.Text;
-using System.Security.Claims;
 
 namespace Services;
 
