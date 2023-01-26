@@ -45,7 +45,7 @@ public class UserService : IUserService
         }
 
         var account = user.Adapt<User>();
-        account.role = "consumer";
+        account.role = "staff";
         account.password = CryptoService.hashPassword(user.password);
 
         await _repositoryManager.userRepository.Add(account);

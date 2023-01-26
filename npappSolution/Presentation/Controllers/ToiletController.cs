@@ -73,4 +73,14 @@ public class ToiletController : ControllerBase
         return Ok();
     }
 
+    [HttpGet]
+    [AllowAnonymous]
+    [Route("getNames")]
+    public async Task<IActionResult> GetNames(){
+
+        var retVal = await _serviceManager.ToiletService.GetToiletNames();
+
+        return Ok(retVal);
+    }
+
 }

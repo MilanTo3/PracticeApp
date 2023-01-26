@@ -1,9 +1,9 @@
 namespace Contracts;
 
-public class FeedbackDto
+public class ReportDto
 {
-    public long feedbackId{get;set;}
-    public long toiletId{get;set;}
+    public string name{get;set;}
+    public string location {get;set;}
     public string gradeOverall{get;set;}
     public bool foulSmell{get;set;} //0
     public bool dirtyBowl{get;set;} //1
@@ -15,5 +15,5 @@ public class FeedbackDto
     public bool litterBin{get;set;} //7
     public bool noTissues{get;set;} //8
     public bool dirtyBasin{get;set;}
-
+    
 }

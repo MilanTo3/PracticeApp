@@ -32,6 +32,18 @@ private readonly IRepositoryManager _repositoryManager;
         return fbackDtos;
     }
 
+    public async Task<SummaryDto> GetSummary(long toiletId){
+
+        var toilet = await _repositoryManager.toiletRepository.getWithFeedbacks(toiletId);
+        var summaryDto = toilet.Adapt<SummaryDto>();
+        summaryDto.totalCnt = toilet.Feedbacks.Count;
+        summaryDto.badCnt = toilet.Feedbacks.Where(x => x.gradeOverall == "Bad").Count();
+        summaryDto.averageCnt = toilet.Feedbacks.Where(x => x.gradeOverall == "Average").Count();
+        summaryDto.goodCnt = toilet.Feedbacks.Where(x => x.gradeOverall == "Good").Count();
+
+        return summaryDto;
+    }
+
     public async Task<FeedbackDto> GetByIdAsync(long feedbackId) {
         var fback = await _repositoryManager.feedbackRepository.getById(feedbackId);
         if(fback is null){
@@ -42,7 +54,16 @@ private readonly IRepositoryManager _repositoryManager;
         return fbackdto;
     }
 
+    private bool checkFeedback(FeedbackDto dto){
+
+        return dto.dirtyBasin || dto.dirtyBowl || dto.dirtyFloor || dto.faultyEquipment || dto.foulSmell || dto.litterBin || dto.noPaper || dto.noSoap || dto.noTissues || dto.wetFloor;
+    }
+
     public async Task<FeedbackDto> CreateAsync(FeedbackDto feedback) {
+
+        if(feedback.gradeOverall == "Bad" && checkFeedback(feedback) == false){
+            return null;
+        }
 
         var account = feedback.Adapt<Feedback>();
         account.time = DateTime.Now;
@@ -69,6 +90,22 @@ private readonly IRepositoryManager _repositoryManager;
         }
 
         return deleted;
+    }
+
+    public async Task<IEnumerable<ReportDto>> GetReports(long toiletId){
+
+        var toilet = await _repositoryManager.toiletRepository.getWithFeedbacks(toiletId);
+        List<ReportDto> reportDto = new List<ReportDto>();
+
+        foreach(Feedback fback in toilet.Feedbacks){
+            Toilet temp = await _repositoryManager.toiletRepository.getById(fback.toiletId);
+            ReportDto dto = fback.Adapt<ReportDto>();
+            dto.name = temp.name;
+            dto.location = temp.location;
+            reportDto.Add(dto);
+        }
+
+        return reportDto;
     }
 
 }

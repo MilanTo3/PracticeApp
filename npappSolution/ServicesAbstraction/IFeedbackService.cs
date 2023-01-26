@@ -14,4 +14,7 @@ public interface IFeedbackService
 
     Task<IEnumerable<FeedbackDto>> GetToiletFeedbacks(long toiletId);
 
+    Task<SummaryDto> GetSummary(long toiletId);
+    Task<IEnumerable<ReportDto>> GetReports(long toiletId);
+
 }

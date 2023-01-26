@@ -148,8 +148,8 @@
               "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj": {
                 "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj"
               },
-              "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj": {
-                "projectPath": "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj"
+              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj": {
+                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj"
               }
             }
           }
@@ -334,8 +334,8 @@
               "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj": {
                 "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj"
               },
-              "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj": {
-                "projectPath": "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj"
+              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj": {
+                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj"
               }
             }
           }
@@ -447,14 +447,14 @@
         }
       }
     },
-    "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj": {
+    "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj",
+        "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\Praksa\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\obj\\",
+        "outputPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Praksa\\AppData\\Roaming\\NuGet\\NuGet.Config"
