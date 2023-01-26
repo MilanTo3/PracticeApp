@@ -51,4 +51,12 @@ public class ToiletRepository: GenericRepository<Toilet>, IToiletRepository
 
         return true;
     }
+
+    public async Task<Toilet> getWithFeedbacks(long toiletId){
+
+        var t = await dbSet.Where(x => x.toiletId == toiletId).Include(p => p.Feedbacks).FirstOrDefaultAsync();
+
+        return t;
+    }
+
 }

@@ -11,4 +11,7 @@ public interface IFeedbackService
     Task<FeedbackDto> CreateAsync(FeedbackDto dto);
 
     Task<bool> DeleteAsync(long feedbackId);
+
+    Task<IEnumerable<FeedbackDto>> GetToiletFeedbacks(long toiletId);
+
 }

@@ -64,5 +64,23 @@ public class FeedbackController : ControllerBase
         return Ok(screening);
     }
 
+    [HttpGet]
+    [AllowAnonymous]
+    [Route("getFeedbacks/{id}")]
+    public async Task<IActionResult> GetToiletFeedbacks(long id){
+
+        var retVal = await _serviceManager.FeedbackService.GetToiletFeedbacks(id);
+        return Ok(retVal);
+    }
+
+    /*
+    [HttpGet]
+    [AllowAnonymous]
+    [Route("getSummary/{id}")]
+    public async Task<IActionResult> GetFeedbackSummary(long toiletId){
+
+        var retVal await _serviceManager.FeedbackService.GetToiletSummary(toiletId);
+        return Ok(retVal);
+    }*/
 
 }

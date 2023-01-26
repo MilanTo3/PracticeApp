@@ -24,6 +24,14 @@ private readonly IRepositoryManager _repositoryManager;
         return accountsDto;
     }
 
+    public async Task<IEnumerable<FeedbackDto>> GetToiletFeedbacks(long toiletId) {
+        var toilet = await _repositoryManager.toiletRepository.getWithFeedbacks(toiletId);
+
+        var fbackDtos = toilet.Feedbacks.Adapt<IEnumerable<FeedbackDto>>();
+
+        return fbackDtos;
+    }
+
     public async Task<FeedbackDto> GetByIdAsync(long feedbackId) {
         var fback = await _repositoryManager.feedbackRepository.getById(feedbackId);
         if(fback is null){
