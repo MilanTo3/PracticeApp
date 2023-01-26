@@ -194,7 +194,7 @@ export default function LogRegPage(){
 			</div>
 			<div className={`${classes["overlay-panel"]} ${classes["overlay-right"]}`}>
 				<h1>First time here?</h1>
-				<p>Enter your personal details and start binging cinema with us, you get a 5% discount!</p>
+				<p>Enter your personal details in order to see detailed reports!</p>
 				<button className={classes.ghost} onClick={buttClicked}>Sign Up</button>
 			</div>
 		</div>
