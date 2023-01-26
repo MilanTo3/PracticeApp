@@ -5,8 +5,7 @@
 }
 
 body{
-	background: linear-gradient(to right, #F9D976, #F39F86);
-
+	background: linear-gradient(to right, #11362a 10%, lightGray);
 
 }
 
@@ -40,8 +39,8 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
+	border: 2px solid lightgray;
+	background-color: #11362a;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -102,7 +101,7 @@ input, select {
 	max-width: 100%;
 	min-height: 600px;
     margin: auto;
-	margin-top: 130px;
+	margin-top: 30px;
 
 }
 
