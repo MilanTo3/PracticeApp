@@ -18,7 +18,7 @@ public class ToiletService : IToiletService
     public async Task<IEnumerable<ToiletDto>> GetAllAsync() {
         var users = await _repositoryManager.toiletRepository.getAll();
 
-        var accountsDto = users.Adapt<IEnumerable<ToiletDto>>();
+        var accountsDto = users.Adapt<IEnumerable<ToiletDto>>().ToList();
 
         return accountsDto;
     }

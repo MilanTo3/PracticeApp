@@ -1,0 +1,85 @@
+.uploadImage{
+    border: 1px solid #ff4b2b;
+    border-radius: 15px;
+    color:Black;
+    font-weight: bold;
+    width: 100%;
+    height: 222px;
+    background-size:cover;
+    transition: transform 0.3s;
+    margin: 0 auto;
+    margin-top: 20px;
+	background-image: url('../../Assets/uploadDef.webp');
+    background-repeat: no-repeat;
+    background-position-y:center
+    
+}
+
+.uploadImage:hover{
+    transform: scale(1.03); 
+}
+
+  .errors{
+    color: red;
+    padding: 0px;
+    margin: 0px;
+    font-size:smaller;
+  }
+  
+  input[type="checkbox"] {
+    position: relative;
+    width: 70px;
+    height: 35px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #11362a;
+    outline: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    box-shadow: inset 0 0 5px rgb(0 0 0 / 50%);
+  }
+  
+  input[type="checkbox"]::before {
+    content: "";
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    background-image: url('../../Assets/male.png');
+    background-size: 85%, 85%;
+    background-position: center;
+    background-repeat: no-repeat;
+    outline: 2px solid #11362a;
+  }
+  
+  input[type="checkbox"]:checked::before {
+    transform: translateX(100%);
+    background: #fff;
+    background-image: url('../../Assets/female.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  input[type="checkbox"]:checked {
+    background: rgb(255, 162, 178);
+  }
+
+  .toggler{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .denominations{
+    color: #11362a;
+    padding: 15px;
+  }
+
+  .denominationsf{
+    color: rgb(255, 162, 178);
+    padding: 15px;
+  }

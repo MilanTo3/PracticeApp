@@ -40,7 +40,7 @@ export default function BasicModal({ content, isDialogOpened, handleCloseDialog 
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={style} style={{borderRadius: "24px"}}>
             {content}
         </Box>
       </Modal>

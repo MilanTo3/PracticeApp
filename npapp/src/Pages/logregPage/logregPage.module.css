@@ -96,12 +96,12 @@ input, select {
 			0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
 	overflow: hidden;
-	width: 800px;
+	width: 700px;
 	
 	max-width: 100%;
 	min-height: 840px;
     margin: auto;
-	margin-top: 30px;
+	margin-top: 10px;
 
 }
 
@@ -164,10 +164,11 @@ input, select {
 }
 
 .overlay {
-	background-image: url('../../Assets/download.jfif');
+	background-image: url('../../Assets/back3.jpg');
 	background-repeat: no-repeat;
-	background-size: cover;
-	background-position-y: bottom;
+	background-size:cover;
+	background-position-y:top;
+	
 	color: #FFFFFF;
 	position: relative;
 	left: -100%;
@@ -212,7 +213,6 @@ input, select {
 
 .container.right-panel-active .overlay-right {
 	transform: translateX(100%);
-	opacity: 0;
 	
 }
 
@@ -241,4 +241,10 @@ h1{
 
 .forgotPassword{
 	color: firebrick;
+}
+
+@media (max-width: 700px) {
+    .container{
+		width: 100%;
+	}
 }
