@@ -64,17 +64,10 @@ export default function SearchAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <p className={classes.logotext}></p>
           </Typography>
-
-          <Search style={{ background: '#11362a' }} className={classes.searchBar}>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
           <Link to="/logregpage"><Button style={{ backgroundColor: "white", color: "black", fontWeight: "bold" }} className={classes.buttonStyle}
             id="fade-button"
             variant="contained">
-            Login/Register</Button></Link>
+            Staff</Button></Link>
         </Toolbar>
       </AppBar>
     </Box>

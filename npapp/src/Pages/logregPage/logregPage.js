@@ -44,6 +44,7 @@ export default function LogRegPage(){
 			
 			const formData = {
 				name: formValues["name"],
+				lastname: formValues["lastname"],
 				email: formValues["email"],
 				password: formValues["password"],
 			}
@@ -137,13 +138,16 @@ export default function LogRegPage(){
 		if(!formValues.email){
 			errors.email = "Email is required.";
 		}
+		if(!formValues.lastname){
+			errors.lastname = "Lastname is required.";
+		}
 		if(!formValues.password){
 			errors.password = "Password is required.";
 		}else if(formValues.password.length < 5){
 			errors.password = "Password must be longer than 5 characters.";
 		}
 		if(!formValues.confirmedpassword){
-			errors.confirmedpassword = "You have to confirm the password";
+			errors.confirmedpassword = "You have to confirm the password.";
 		}else if(formValues.password !== formValues.confirmedpassword){
 			errors.confirmedpassword = "Confirmed password is wrong.";
 		}
@@ -162,14 +166,30 @@ export default function LogRegPage(){
 		<form onSubmit={handleSubmit} className={classes.form}>
 			<h1>Create Account</h1>
 			<span>join us, you get a 5% discount!</span>
-			<input type="text" name="name" placeholder="Name" value={formValues.name} onChange={handleChange} />
-			<p className={classes.errors}>{formErrors.name}</p>
+
+			<div className={classes.inputWrapper}>
+				<div className={classes.inputInward}>
+					<input type="text" name="name" placeholder="Name" value={formValues.name} onChange={handleChange}/>
+					<p className={classes.errors}>{formErrors.name}</p>
+				</div>
+				<div className={classes.inputInward}>
+					<input type="text" name="lastname" placeholder="Lastname" value={formValues.lastname} onChange={handleChange}/>
+					<p className={classes.errors}>{formErrors.lastname}</p>
+				</div>
+			</div>
 			<input type="email" name="email" placeholder="Email" value={formValues.email} onChange={handleChange}/>
 			<p className={classes.errors}>{formErrors.email}</p>
-			<input type="password" name="password" placeholder="Password" value={formValues.password} onChange={handleChange}/>
-			<p className={classes.errors}>{formErrors.password}</p>
-			<input type="password" name="confirmedpassword" placeholder="Confirm your Password" value={formValues.confirmedpassword} onChange={handleChange}/>
-			<p className={classes.errors}>{formErrors.confirmedpassword}</p>
+			<div className={classes.inputWrapper}>
+				<div className={classes.inputInward}>
+					<input type="password" name="password" placeholder="Password" value={formValues.password} onChange={handleChange}/>
+					<p className={classes.errors}>{formErrors.password}</p>
+				</div>
+				<div className={classes.inputInward}>
+					<input type="password" name="confirmedpassword" placeholder="Confirm your Password" value={formValues.confirmedpassword} onChange={handleChange}/>
+					<p className={classes.errors}>{formErrors.confirmedpassword}</p>
+				</div>
+			</div>
+			
 			<button type="submit">Sign Up</button>
 		</form>
 	</div>

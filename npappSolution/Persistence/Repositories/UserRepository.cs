@@ -48,6 +48,8 @@ public class UserRepository: GenericRepository<User>, IUserRepository
         try {
             var exist = await dbSet.Where(x => x.userId == user.userId).FirstOrDefaultAsync();
             if (exist != null) {
+                exist.name = user.name;
+                exist.lastname = user.lastname;
                 exist.password = user.password;
             }
         }

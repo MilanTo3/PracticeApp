@@ -10500,44 +10500,46 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Praksa\\.nuget\\packages\\": {}
+    "C:\\Users\\wishm\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\npWorkApp\\npWorkApp.csproj",
+      "projectUniqueName": "E:\\DunavNetPraksa\\PracticeApp\\npappSolution\\npWorkApp\\npWorkApp.csproj",
       "projectName": "npWorkApp",
-      "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\npWorkApp\\npWorkApp.csproj",
-      "packagesPath": "C:\\Users\\Praksa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\npWorkApp\\obj\\",
+      "projectPath": "E:\\DunavNetPraksa\\PracticeApp\\npappSolution\\npWorkApp\\npWorkApp.csproj",
+      "packagesPath": "C:\\Users\\wishm\\.nuget\\packages\\",
+      "outputPath": "E:\\DunavNetPraksa\\PracticeApp\\npappSolution\\npWorkApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Praksa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\wishm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Domain\\Domain.csproj"
+            "E:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Domain\\Domain.csproj": {
+              "projectPath": "E:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\Persistence.csproj": {
-              "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\Persistence.csproj"
+            "E:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Persistence\\Persistence.csproj": {
+              "projectPath": "E:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Persistence\\Persistence.csproj"
             },
-            "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Presentation\\Presentation.csproj": {
-              "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Presentation\\Presentation.csproj"
+            "E:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Presentation\\Presentation.csproj": {
+              "projectPath": "E:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Presentation\\Presentation.csproj"
             },
-            "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj": {
-              "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj"
+            "E:\\DunavNetPraksa\\PracticeApp\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj": {
+              "projectPath": "E:\\DunavNetPraksa\\PracticeApp\\npappSolution\\ServicesAbstraction\\ServicesAbstraction.csproj"
             },
-            "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj": {
-              "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj"
+            "E:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Services\\Services.csproj": {
+              "projectPath": "E:\\DunavNetPraksa\\PracticeApp\\npappSolution\\Services\\Services.csproj"
             }
           }
         }
@@ -10608,7 +10610,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

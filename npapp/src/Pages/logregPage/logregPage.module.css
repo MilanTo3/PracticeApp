@@ -5,8 +5,10 @@
 }
 
 body{
-	background: linear-gradient(to right, #11362a 10%, lightGray);
 
+	background-image: url('../../Assets/grayBackground.png');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 h1 {
@@ -64,7 +66,7 @@ button.ghost {
 }
 
 .form {
-	background-color: lightgray;
+	background: linear-gradient(to bottom, lightBlue, lightGray);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -90,7 +92,7 @@ input, select {
 }
 
 .container {
-	background-color: lightgray;
+	background: linear-gradient(to bottom, lightBlue, lightGray);
 	border-radius: 10px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 			0 10px 10px rgba(0,0,0,0.22);
@@ -164,11 +166,7 @@ input, select {
 }
 
 .overlay {
-	background-image: url('../../Assets/back3.jpg');
-	background-repeat: no-repeat;
-	background-size:cover;
-	background-position-y:top;
-	
+	background: linear-gradient(to left, lightBlue, #11362a 60%);
 	color: #FFFFFF;
 	position: relative;
 	left: -100%;
@@ -177,6 +175,7 @@ input, select {
   	transform: translateY(0);
 	transition: transform 0.6s ease-in-out;
 	text-shadow: 2px 2px black;
+
 }
 
 .container.right-panel-active .overlay {
@@ -243,8 +242,25 @@ h1{
 	color: firebrick;
 }
 
+.inputWrapper{
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+}
+
+.inputInward{
+
+	padding: 10px 15px;
+	margin: 8px 0;
+	width: 100%;
+}
+
 @media (max-width: 700px) {
     .container{
 		width: 100%;
+		height: 100vh;
+		border-radius: 0px;
+		margin-top: 0px;
 	}
+
 }

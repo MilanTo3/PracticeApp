@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+.container {
+    background-image: url('../../Assets/ratingdef2.webp');
+    background-size: 78.5% auto;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-color: white;
+
+    border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 700px;
+	max-width: 100%;
+	min-height: 840px;
+    margin: auto;
+	margin-top: 10px;
+
+}
+
+.maintitle{
+    margin-top: 24px;
+}
+
+.title{
+    color: #11362a;
+}
+
+.info{
+    margin: auto;
+    border-radius: 24px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+    padding: 24px;
+    width: 90%;
+    transition: 0.6s all;
+}
+
+.maleBackground{
+    background: linear-gradient(to bottom, lightBlue, lightGray);
+
+}
+
+.femaleBackground{
+    background: linear-gradient(to bottom, pink, lightGray);
+
+}
+
+.gotinfo{
+    display: inline;
+    color: #11362a;
+    font-weight: bold;
+}
+
+.gender{
+    margin: 10px;
+    padding: 21px;
+    display: flex;
+    align-items: center; /* centers vertically */
+    justify-content: center;
+}
+
+.label{
+    margin: auto;
+    color: #11362a;
+}
+
+.gender-card {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+    outline: 1.2px solid #11362a;
+}
+
+.radioButton{
+    display: none;
+}
+  
+.gender-card.selectedMale {
+  background: url('../../Assets/male.png');
+  background-blend-mode:darken;
+  background-color: lightblue;
+  background-size: cover;
+  color: white;
+  transition: 0.5s;
+}
+
+.gender-card.selectedFemale{
+  background: url('../../Assets/female.png');
+  background-blend-mode:darken;
+  background-color: pink;
+  background-size: cover;
+  color: white;
+  transition: 0.5s;
+}
+
+@media (max-width: 700px) {
+    .container{
+		width: 100%;
+		border-radius: 0px;
+		margin-top: 0px;
+        background-position-y: 89%;
+	}
+    .maintitle{
+        margin-top: 7px;
+    }
+}
