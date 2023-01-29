@@ -9,6 +9,9 @@ body{
 	background-image: url('../../Assets/grayBackground.png');
 	background-repeat: no-repeat;
 	background-size: cover;
+	/*
+	background: linear-gradient(to right, #11362a, lightBlue);
+	*/
 }
 
 h1 {
@@ -101,7 +104,7 @@ input, select {
 	width: 700px;
 	
 	max-width: 100%;
-	min-height: 840px;
+	min-height: 830px;
     margin: auto;
 	margin-top: 10px;
 
@@ -250,7 +253,7 @@ h1{
 
 .inputInward{
 
-	padding: 10px 15px;
+	padding: 0px 10px;
 	margin: 8px 0;
 	width: 100%;
 }

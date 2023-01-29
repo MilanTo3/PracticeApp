@@ -15,7 +15,7 @@
 	overflow: hidden;
 	width: 700px;
 	max-width: 100%;
-	min-height: 840px;
+	min-height: 830px;
     margin: auto;
 	margin-top: 10px;
 
@@ -36,7 +36,7 @@
 			0 10px 10px rgba(0,0,0,0.22);
     padding: 24px;
     width: 90%;
-    transition: 0.6s all;
+
 }
 
 .maleBackground{
@@ -109,7 +109,7 @@
 		width: 100%;
 		border-radius: 0px;
 		margin-top: 0px;
-        background-position-y: 89%;
+        background-position-y: 88%;
 	}
     .maintitle{
         margin-top: 7px;

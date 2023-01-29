@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="166.614" height="127.723" viewBox="0 0 166.614 127.723">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.253" y1="-0.131" x2="0.433" y2="0.458" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_24556" data-name="Group 24556" transform="translate(0)">
+    <ellipse id="Ellipse_457" data-name="Ellipse 457" cx="63.445" cy="13.052" rx="63.445" ry="13.052" transform="translate(21.409 101.618)" fill="#e4e4e4"/>
+    <g id="Group_24560" data-name="Group 24560" transform="translate(0 0)">
+      <path id="Path_70681" data-name="Path 70681" d="M-419.458,602.936c8.158,27.4-36.014,41.38-80.781,41.642-45.305.264-91.221-13.517-84.124-41.642C-560.462,508.224-449.226,502.939-419.458,602.936Z" transform="translate(585.093 -529.907)" fill="#f3e500" fill-rule="evenodd"/>
+      <path id="Path_70682" data-name="Path 70682" d="M-425.2,602.338c7.5,24.489-33.118,36.978-74.284,37.212-41.662.236-83.886-12.08-77.359-37.212C-554.865,517.7-452.574,512.978-425.2,602.338Z" transform="translate(583.869 -531.065)" fill-rule="evenodd" fill="url(#linear-gradient)"/>
+      <path id="Path_70683" data-name="Path 70683" d="M-445.6,633.445c-13.779-48.127-84.991-47.248-99.418,0C-511.932,624.952-477.732,626.326-445.6,633.445Z" transform="translate(578.621 -540.853)" fill="#024437" stroke="#024437" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.84" fill-rule="evenodd"/>
+      <g id="Group_24559" data-name="Group 24559" transform="translate(41.084 33.262)">
+        <path id="Path_70684" data-name="Path 70684" d="M-468.516,569.576c5.675,8.932,18.763,12.862,27.782,7.063" transform="translate(525.181 -569.576)" fill="none" stroke="#024437" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" fill-rule="evenodd"/>
+        <path id="Path_70685" data-name="Path 70685" d="M-508.313,569.576c-5.676,8.932-18.764,12.862-27.783,7.063" transform="translate(536.096 -569.576)" fill="none" stroke="#024437" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" fill-rule="evenodd"/>
+      </g>
+    </g>
+  </g>
+</svg>

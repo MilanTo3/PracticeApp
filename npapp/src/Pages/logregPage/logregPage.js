@@ -177,7 +177,9 @@ export default function LogRegPage(){
 					<p className={classes.errors}>{formErrors.lastname}</p>
 				</div>
 			</div>
-			<input type="email" name="email" placeholder="Email" value={formValues.email} onChange={handleChange}/>
+			<div className={classes.inputInward}>
+				<input type="email" name="email" placeholder="Email" value={formValues.email} onChange={handleChange}/>
+			</div>
 			<p className={classes.errors}>{formErrors.email}</p>
 			<div className={classes.inputWrapper}>
 				<div className={classes.inputInward}>

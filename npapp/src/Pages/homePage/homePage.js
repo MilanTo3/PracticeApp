@@ -1,10 +1,13 @@
 import classes from "./homePage.module.css";
 import { motion } from 'framer-motion';
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage(){
 
     const [selectedValue, setSelectedValue] = useState('male');
+    const navigate = useNavigate();
+    const handleClick = () => navigate('/ratingPage');
 
     const handleChange = (event) => {
         setSelectedValue(event.target.value);
@@ -42,7 +45,7 @@ export default function HomePage(){
                         </div>
                     </div>
                     
-                    <button className={classes.proceed}>Proceed</button>
+                    <button onClick={handleClick} className={classes.proceed}>Proceed</button>
                 </div>
 
             </div>
