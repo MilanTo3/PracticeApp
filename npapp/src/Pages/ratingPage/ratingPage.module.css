@@ -30,21 +30,21 @@
 .unhappyCard{
     background-image: url(../../Assets/Group\ 24556.svg);
     background-repeat: no-repeat;
-    background-size: 90% auto;
+    background-size:87% auto;
     background-position:center;
 }
 
 .sadCard{
     background-image: url(../../Assets/Group\ 24555.svg);
     background-repeat: no-repeat;
-    background-size: 90% auto;
+    background-size: 87% auto;
     background-position:center;
 }
 
 .happyCard{
     background-image: url(../../Assets/Group\ 24554.png);
     background-repeat: no-repeat;
-    background-size: 90% auto;
+    background-size: 87% auto;
     background-position:center;
 }
 
@@ -97,12 +97,28 @@
 }
 
 .card:hover{
-    background-color: rgba(17, 54, 42, 0.3);
+    background-size: 91% auto;
+
 }
 
 .wrapper{
     display: flex;
     flex-direction: row;
+}
+
+.badLight{
+    background-color: rgba(255, 0, 0, 0.5);
+
+}
+
+.averageLight{
+    background-color: rgba(223, 223, 43, 0.486);
+
+}
+
+.goodLight{
+    background-color: rgba(0, 128, 0, 0.5);
+
 }
 
 @media (max-width: 700px) {

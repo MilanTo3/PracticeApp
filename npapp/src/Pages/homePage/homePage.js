@@ -20,7 +20,7 @@ export default function HomePage(){
                     <h2 style={{color:"#11362a"}}>PLEASE RATE YOUR EXPERIENCE:</h2>
                 </div>
                 <h3 className={classes.title}>Help us improve our service :)</h3>
-                <div className={`${classes.info} ${classes[selectedValue === 'male' ? 'maleBackground' : 'femaleBackground']}`}>
+                <div className={`${classes.info}`} style={{background: selectedValue === 'male' ? 'linear-gradient(to bottom, lightBlue, lightGray)' :'linear-gradient(to bottom, pink, lightGray)'}}>
                     <h3>Establishment: <h5 className={classes.gotinfo}>Seshadri Tower</h5></h3>
                     <h3>City: <h5 className={classes.gotinfo}>Europolis</h5></h3>
                     <h3>Location: <h5 className={classes.gotinfo}>The Collective Street 132, Scnd Floor</h5></h3>

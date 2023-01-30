@@ -8,7 +8,7 @@ body{
 
 	background-image: url('../../Assets/grayBackground.png');
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 100% 100vh;
 	/*
 	background: linear-gradient(to right, #11362a, lightBlue);
 	*/

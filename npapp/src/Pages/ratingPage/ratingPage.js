@@ -9,8 +9,9 @@ export default function RatingPage(){
     const navigate = useNavigate();
     const handleClick = () => navigate('/ratingPage');
 
-    const handleChange = (parameter) => {
-        setSelectedValue(parameter);
+    const handleChange = (event) => {
+        setSelectedValue(event.target.id);
+
     };
 
     return (
@@ -22,26 +23,14 @@ export default function RatingPage(){
                 <h3 className={classes.title}>Help us improve our service :)</h3>
                 <div className={classes.wrapper}>
                     <div className={classes.cards}>
-                        <div onClick={() => handleChange("Bad")} className={`${classes.card} ${classes.unhappyCard}`}>
-                            <input className={classes.radioButton}
-                                type="radio"
-                                value="Bad"
-                                checked={selectedValue === 'Bad'}
-                                />
+                        <div onClick={handleChange} id='Bad' className={`${classes.card} ${classes.unhappyCard} ${selectedValue === "Bad" ? classes.badLight: ''}`}>
+
                         </div>
-                        <div onClick={() => handleChange("Average")} className={`${classes.card} ${classes.sadCard}`}>
-                            <input className={classes.radioButton}
-                                type="radio"
-                                value="Average"
-                                checked={selectedValue === 'Average'}
-                                />
+                        <div onClick={handleChange} id={'Average'} className={`${classes.card} ${classes.sadCard} ${selectedValue === "Average" ? classes.averageLight: ''}`}>
+
                         </div>
-                        <div onClick={() => handleChange("Great")} className={`${classes.card} ${classes.happyCard}`}>
-                            <input className={classes.radioButton}
-                                type="radio"
-                                value="Great"
-                                checked={selectedValue === 'Great'}
-                                />
+                        <div onClick={handleChange} id={'Great'} className={`${classes.card} ${classes.happyCard}  ${selectedValue === "Great" ? classes.goodLight: ''}`}>
+
                         </div>
                         
                         <button onClick={handleClick} className={classes.proceed}>Proceed</button>

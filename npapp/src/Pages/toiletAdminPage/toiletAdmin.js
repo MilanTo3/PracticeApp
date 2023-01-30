@@ -11,7 +11,7 @@ export default function ToiletAdmin(){
     return (
         <motion.div className={classes.box} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} style={{marginTop: "100px"}}>
             <p className={classes.managwrite}>Toilet administration:</p>
-            <CustomTable dataType={"toilets"}/>
+            <CustomTable dataType={"toilets"} />
         </motion.div>
     
     );

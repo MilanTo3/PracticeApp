@@ -5,6 +5,8 @@ import SearchAppBar from './Components/NavigationBar/navbar';
 import ToiletAdmin from './Pages/toiletAdminPage/toiletAdmin';
 import HomePage from './Pages/homePage/homePage';
 import RatingPage from './Pages/ratingPage/ratingPage';
+import BadRatingPage from './Pages/badRatingPage/badRatingPage';
+import ThankYouPage from './Pages/thankYouPage/thankYouPage';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path="/logregPage" element={<LogRegPage />}/>
         <Route path="/toiletAdmin" element={<ToiletAdmin />}/>
         <Route path="/ratingPage" element={<RatingPage />} />
+        <Route path="/badRatingPage" element={<BadRatingPage />} />
+        <Route path="/thankYouPage" element={<ThankYouPage />} />
       </Routes>
     </div>
   );

@@ -55,7 +55,9 @@ export default function CustomTable({dataType}) {
     const ind = dict[dataType];
 
     const headersName = [["Toilet Name", "Location", "Gender"], //Toilet
-                        ];
+                         ["Toilet Name", "Grade", "Toilet seat up", "..."],
+                         ["Toilet Name", "Summarry Grade"]                      
+    ];
     
     const headersKeys = [["name", "location", "gender"], //Toilet
                         ];
@@ -155,6 +157,7 @@ export default function CustomTable({dataType}) {
                 <StyledTableCell align="left">
                     <Button style={{backgroundColor: "#11362a", color: "white", marginLeft: "4px"}}>View</Button>
                 </StyledTableCell>
+                <StyledTableCell />
               </StyledTableRow>
             ))}
         </TableBody>
