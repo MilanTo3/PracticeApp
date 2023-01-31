@@ -42,11 +42,19 @@ function createData(name, location, gender) {
   return { name, location, gender };
 }
 
+function createFeedbackData(name, time, gradeOverall, foulSmell, dirtyBowl, noPaper, noSoap, dirtyFloor, wetFloor, faultyEquipment, litterBin, noTissues, dirtyBasin){
+  return {name, time, gradeOverall, foulSmell, dirtyBowl, noPaper, noSoap, dirtyFloor, wetFloor, faultyEquipment, litterBin, noTissues, dirtyBasin};
+}
+
 const rows = [
   [createData("Seshadri 2", "Europolis, Seshadri Tower", "Female"),
   createData('Bowels', "Europolis, The Collective", "Male"),
   createData('Eclair', "Europolis, Bell Street", "Female"),
   createData("Kitten and Rooster", "Marcuria, Azadi Square", "Male")],
+  [createFeedbackData("Seshadri Tower", "21.03.2022. 15:30:33", "Good", "No", "No", "No", "No", "No", "No", "No", "No", "No", "No"),
+  createFeedbackData("WatiCorp", "21.03.2022. 15:30:33", "Average", "No", "No", "No", "No", "No", "No", "No", "No", "No", "No"),
+  createFeedbackData("Eclair", "21.03.2022. 15:30:33", "Bad", "No", "No", "No", "No", "No", "No", "No", "No", "No", "No")
+  ]
 ];
 
 export default function CustomTable({dataType}) {
@@ -55,18 +63,19 @@ export default function CustomTable({dataType}) {
     const ind = dict[dataType];
 
     const headersName = [["Toilet Name", "Location", "Gender"], //Toilet
-                         ["Toilet Name", "Grade", "Toilet seat up", "..."],
-                         ["Toilet Name", "Summarry Grade"]                      
+                         ["Toilet Name", "Time", "Overall Rating", "Foul Smell", "Dirty Bowl", "No Paper", "No Soap", "Dirty Floor", "Wet Floor", "Faulty Equipment", "Litter Bin", "No Tissues", "Dirty Basin"],
+                         ["Toilet Name", "Total Grades", "Good", "Average", "Bad"]                      
     ];
     
     const headersKeys = [["name", "location", "gender"], //Toilet
-                        ];
-    const idNames = ["toiletId"];
+                         ["name", "time", "gradeOverall", "foulSmell", "dirtyBowl", "noPaper", "noSoap", "dirtyFloor", "wetFloor", "faultyEquipment", "litterBin", "noTissues", "dirtyBasin"],
+                         ["name", "location", "totalCnt", "goodCnt", "averageCnt", "badCnt"]];
+    const idNames = ["toiletId", "feedbackId", "toiletId"];
 
     const [isOpen, setIsOpen] = React.useState(false);
     const [modal, setmodal] = React.useState([]);
     const handleOpenModal = () => {
-        
+    
       setmodal(addmodal);
       setIsOpen(!isOpen);
     };
@@ -105,6 +114,15 @@ export default function CustomTable({dataType}) {
               setheaderKeys(headersKeys[ind]);
               setData(rows[ind]);
           });
+        }else if(dataType === "reports"){
+          getToilets().then(function (response){
+            setData(response["data"]);
+            setheaderKeys(headersKeys[ind]);
+            console.log(response);
+        }).catch(function (error){
+            setheaderKeys(headersKeys[ind]);
+            setData(rows[ind]);
+        });
         }else{
         
           setheaderKeys(headersKeys[ind]);
@@ -124,13 +142,10 @@ export default function CustomTable({dataType}) {
                       {header}
                   </StyledTableCell>
               ))}
-              <StyledTableCell align="left">
-                      Action:
-                  </StyledTableCell>
-                  <StyledTableCell align="left">
-                      <Button onClick={() => handleOpenModal()} style={{backgroundColor: "#11362a", color: "white", border: "2px solid lightblue"}}>+ Add New</Button>
+                  <StyledTableCell align="right" colSpan={2}>
+                      <Button onClick={() => handleOpenModal()} style={ dataType === "toilets" ? { backgroundColor: "#11362a", color: "white", border: "2px solid lightblue", margin: "1px"} : {display: "none"}}>+ Add New</Button>
                       <TextField 
-                      label="Search Name" size="small" style={{ float: 'right' }}
+                      label="Search Name" size="small" style={{ float: 'right', margin: "1px" }}
                       InputProps={{ style: {backgroundColor: "white"},
                         endAdornment: (
                           <InputAdornment>

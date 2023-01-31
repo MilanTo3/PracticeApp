@@ -2,6 +2,7 @@ namespace Contracts;
 
 public class ReportDto
 {
+    public long feedbackId{get;set;}
     public string name{get;set;}
     public string location {get;set;}
     public string gradeOverall{get;set;}

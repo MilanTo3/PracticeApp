@@ -7,12 +7,19 @@ export default function BadRatingPage(){
 
     const initVal = { foulSmell: false, dirtyBowl: false, noPaper: false, noSoap: false, dirtyFloor: false, wetFloor: false, faultyEquipment: false, litterBin: false, noTissues: false, dirtyBasin: false };
     const [selectedValues, setSelectedValues] = useState(initVal);
+    const navigate = useNavigate();
+
     const handleSelection = (event) => {
         const name = event.target.id;
         console.log(name);
         let newDict = {...selectedValues};
         newDict[name] = !newDict[name];
         setSelectedValues(newDict);
+    };
+
+    const handleClick = (event) => {
+        navigate('/thankYouPage');
+
     };
 
     const foulSmell =     require('../../Assets/Group 24444/Group 24444.png');
@@ -50,7 +57,7 @@ export default function BadRatingPage(){
                         ))}
                     </div>
                     <br/>
-                    <button>Submit</button>
+                    <button onClick={handleClick}>Submit</button>
                 </div>
                 <br/>
             </div>

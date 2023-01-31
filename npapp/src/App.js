@@ -7,6 +7,7 @@ import HomePage from './Pages/homePage/homePage';
 import RatingPage from './Pages/ratingPage/ratingPage';
 import BadRatingPage from './Pages/badRatingPage/badRatingPage';
 import ThankYouPage from './Pages/thankYouPage/thankYouPage';
+import ReportsPage from './Pages/reportsPage/reportsPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/ratingPage" element={<RatingPage />} />
         <Route path="/badRatingPage" element={<BadRatingPage />} />
         <Route path="/thankYouPage" element={<ThankYouPage />} />
+        <Route path="/reportsPage" element={<ReportsPage />} />
       </Routes>
     </div>
   );

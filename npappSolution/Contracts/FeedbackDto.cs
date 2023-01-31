@@ -14,6 +14,6 @@ public class FeedbackDto
     public bool faultyEquipment{get;set;} //6
     public bool litterBin{get;set;} //7
     public bool noTissues{get;set;} //8
-    public bool dirtyBasin{get;set;}
+    public bool dirtyBasin{get;set;} //9
 
 }

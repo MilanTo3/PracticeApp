@@ -1,0 +1,40 @@
+.box{
+    padding: 0px 40px 0px 40px;
+}
+
+.managwrite {
+	border-radius: 20px;
+	border: 1px solid #11362a;
+	background: linear-gradient(to right, lightblue, #11362a);;
+	color: #FFFFFF;
+	font-size: 21px;
+	font-weight: bold;
+	padding: 10px 30px;
+    margin-bottom: 21px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+    text-align: center;
+}
+
+.inputWrap{
+	display: flex;
+	flex-direction: row;
+    justify-content: center;
+    margin: 4px;
+    
+}
+
+.input{
+    border-radius: 19px;
+    margin: 4px;
+    height: 50%;
+    width: 200px;
+}
+
+@media (max-width: 700px) {
+    .inputWrap{
+        flex-direction: column;
+        align-items: center;
+
+    }
+}

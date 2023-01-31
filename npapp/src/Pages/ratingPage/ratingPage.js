@@ -7,7 +7,14 @@ export default function RatingPage(){
 
     const [selectedValue, setSelectedValue] = useState('Average');
     const navigate = useNavigate();
-    const handleClick = () => navigate('/ratingPage');
+    const handleClick = () => {
+        if(selectedValue === "Bad"){
+            navigate("/badRatingPage");
+        }else{
+            navigate("/thankYouPage");
+        }
+
+    };
 
     const handleChange = (event) => {
         setSelectedValue(event.target.id);
