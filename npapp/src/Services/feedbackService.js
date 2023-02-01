@@ -1,20 +1,13 @@
 import axios from "axios";
 
-const baseUrl = "https://localhost:7093/api/feedback/"
-const user = JSON.parse(localStorage.getItem("loggedInUser"));
-const authAxios = axios.create({
-
-    headers: {
-        Authorization: `Bearer ${user ? user.token:''}`
-    }
-});
+const baseUrl = "http://localhost:5029/api/feedback/"
 
 const getFeedbacks = () => {
-    return authAxios.get(baseUrl);
+    return axios.get(baseUrl);
 }
 
 const getFeedback = (id) => {
-    return authAxios.get(baseUrl + id);
+    return axios.get(baseUrl + id);
 }
 
 const sendFeedback = (formData) => {
@@ -22,11 +15,12 @@ const sendFeedback = (formData) => {
 }
 
 const getReports = (id) => {
-    return axios.post(baseUrl + "getReports/" + id);
+
+    return axios.get(baseUrl + "getReports/" + id);
 }
 
 const getSummary = (id) => {
-    return axios.post(baseUrl + "getSummary/" + id);
+    return axios.get(baseUrl + "getSummary/" + id);
 }
 
 export {getFeedbacks, getFeedback, sendFeedback, getReports, getSummary};

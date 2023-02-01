@@ -14,6 +14,6 @@ public interface IToiletService
 
     Task<bool> UpdateAsync(ToiletDto dto);
 
-    Task<IEnumerable<string>> GetToiletNames();
+    Task<IEnumerable<NameDto>> GetToiletNames();
 
 }

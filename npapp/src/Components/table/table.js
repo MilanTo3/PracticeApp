@@ -17,6 +17,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import { getToilets } from '../../Services/toiletService';
 import BasicModal from '../BasicModal/modal';
 import AddToiletForm from '../addToiletModal/addToilet';
+import { getReports } from '../../Services/feedbackService';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -115,14 +116,14 @@ export default function CustomTable({dataType}) {
               setData(rows[ind]);
           });
         }else if(dataType === "reports"){
-          getToilets().then(function (response){
+          getReports(-1).then(function (response){
             setData(response["data"]);
             setheaderKeys(headersKeys[ind]);
             console.log(response);
-        }).catch(function (error){
-            setheaderKeys(headersKeys[ind]);
-            setData(rows[ind]);
-        });
+          }).catch(function (error){
+              setheaderKeys(headersKeys[ind]);
+              setData(rows[ind]);
+          });
         }else{
         
           setheaderKeys(headersKeys[ind]);
@@ -166,17 +167,15 @@ export default function CustomTable({dataType}) {
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 { headerKey.map((key) => (
-                  <StyledTableCell align="left">{row[key]}</StyledTableCell>
+                  <StyledTableCell align="left">{
+                    (typeof row[key]) === typeof true ? (row[key] ? "Yes":"No") : row[key] 
+                    }</StyledTableCell>
                 ))}
-
-                <StyledTableCell align="left">
-                    <Button style={{backgroundColor: "#11362a", color: "white", marginLeft: "4px"}}>View</Button>
-                </StyledTableCell>
                 <StyledTableCell />
               </StyledTableRow>
             ))}
         </TableBody>
-        
+
       </Table>
 
       <BasicModal onCloseModal={handleOpenModal} isDialogOpened={isOpen} handleCloseDialog={() => setIsOpen(false)} content={modal} />

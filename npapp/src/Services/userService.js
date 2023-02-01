@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const baseUrl = "https://localhost:7093/api/users/";
-const authBase = "https://localhost:7093/api/auth/";
+const baseUrl = "http://localhost:5029/api/users/";
+const authBase = "http://localhost:5029/api/auth/";
 const user = JSON.parse(localStorage.getItem("loggedInUser"));
 const authAxios = axios.create({
 

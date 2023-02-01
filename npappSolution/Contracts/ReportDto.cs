@@ -5,6 +5,7 @@ public class ReportDto
     public long feedbackId{get;set;}
     public string name{get;set;}
     public string location {get;set;}
+    public string time{get;set;}
     public string gradeOverall{get;set;}
     public bool foulSmell{get;set;} //0
     public bool dirtyBowl{get;set;} //1

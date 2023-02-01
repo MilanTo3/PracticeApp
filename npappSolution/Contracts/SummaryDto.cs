@@ -2,6 +2,7 @@ namespace Contracts;
 
 public class SummaryDto
 {
+    public long toiletId{get;set;}
     public string name{get;set;}
     public string location {get;set;}
     public long totalCnt{get;set;}

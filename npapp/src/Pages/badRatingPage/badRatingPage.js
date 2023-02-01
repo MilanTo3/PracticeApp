@@ -2,12 +2,17 @@ import {motion} from 'framer-motion';
 import { useEffect, useState } from 'react';
 import classes from "./badRatingPage.module.css";
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { sendFeedback } from '../../Services/feedbackService';
 
 export default function BadRatingPage(){
 
-    const initVal = { foulSmell: false, dirtyBowl: false, noPaper: false, noSoap: false, dirtyFloor: false, wetFloor: false, faultyEquipment: false, litterBin: false, noTissues: false, dirtyBasin: false };
-    const [selectedValues, setSelectedValues] = useState(initVal);
     const navigate = useNavigate();
+    const location = useLocation();
+    const gender = location.state.gender;
+    const gradeOverall = location.state.gradeOverall;
+    const initVal = { toiletId: localStorage.getItem("toiletId"), gender: gender, gradeOverall: gradeOverall, foulSmell: false, dirtyBowl: false, noPaper: false, noSoap: false, dirtyFloor: false, wetFloor: false, faultyEquipment: false, litterBin: false, noTissues: false, dirtyBasin: false };
+    const [selectedValues, setSelectedValues] = useState(initVal);
 
     const handleSelection = (event) => {
         const name = event.target.id;
@@ -17,8 +22,11 @@ export default function BadRatingPage(){
         setSelectedValues(newDict);
     };
 
-    const handleClick = (event) => {
-        navigate('/thankYouPage');
+    const handleClick = (event) => {        
+
+        sendFeedback(selectedValues).then(() => {
+            navigate('/thankYouPage');
+        });
 
     };
 
@@ -34,8 +42,8 @@ export default function BadRatingPage(){
     const litterBin =     require('../../Assets/Group 24451/Group 24451.png');
 
     const data = [["foulSmell", foulSmell, "Foul Smell"], ["dirtyBowl", dirtyBowl, "Dirty Bowl"],
-                  ["noToiletPaper", noToiletPaper, "No Paper"], ["noSoap", noSoap, "No Soap"],
-                  ["noTissuePaper", noTissuePaper, "No Tissues"], ["dirtyFloor", dirtyFloor, "Dirty Floor"],
+                  ["noPaper", noToiletPaper, "No Paper"], ["noSoap", noSoap, "No Soap"],
+                  ["noTissues", noTissuePaper, "No Tissues"], ["dirtyFloor", dirtyFloor, "Dirty Floor"],
                   ["dirtyBasin", dirtyBasin, "Dirty Basin"], ["wetFloor", wetFloor, "Wet Floor"],
                   ["faultyEquipment", faultyEquipment, "Faulty Equipment"], ["litterBin", litterBin, "Litter Bin"]];
 

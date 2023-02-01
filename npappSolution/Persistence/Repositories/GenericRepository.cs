@@ -16,7 +16,7 @@ public class GenericRepository<T>: IGenericRepository<T> where T : class
     public GenericRepository(RepositoryDbContext cont) {
             Context = cont;
             dbSet = Context.Set<T>();
-        }
+    }
 
     public virtual async Task<bool> Add(T entity) {
         try {

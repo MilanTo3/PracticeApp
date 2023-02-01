@@ -4,6 +4,8 @@ public class FeedbackDto
 {
     public long feedbackId{get;set;}
     public long toiletId{get;set;}
+    public DateTime time {get;set;}
+    public string gender{get;set;}
     public string gradeOverall{get;set;}
     public bool foulSmell{get;set;} //0
     public bool dirtyBowl{get;set;} //1

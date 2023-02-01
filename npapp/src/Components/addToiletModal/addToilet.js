@@ -20,7 +20,7 @@ export default function AddToiletForm({ closer }){
     const initialFieldValues = {
       name: '',
       location: '',
-      gender: '',
+      city: '',
       imageSrc: '',
       imageFile: null,
     };
@@ -50,6 +50,9 @@ export default function AddToiletForm({ closer }){
       if(!formValues.name){
         errors.name = "Name is required.";
       }
+      if(!formValues.city){
+        errors.name = "City name is required";
+      }
       if(!formValues.location){
         errors.location = "Location is a required field.";
       }
@@ -70,7 +73,7 @@ export default function AddToiletForm({ closer }){
         const data = {
           name: formValues.name,
           location: formValues.location,
-          gender: formValues.gender ? "Male" : "Female"
+          city: formValues.city
         }
         addToilet(data).then(function (response){
         setsnackbarType(0);
@@ -106,20 +109,13 @@ export default function AddToiletForm({ closer }){
     <form onSubmit={handleSubmit} style={{ textAlign: "center" }}>
         <BasicSnackbar center={true} type={snackbarType} content={snackbarContent} isDialogOpened={snackbarOpen} handleClose={handleSnackbarClose} />
 		    <h1>Add a new toilet:</h1>
-        <img src={preview} className={classes.uploadImage} onClick={onBtnClick} />
-        <input name="file" onChange={changeHandler} ref={inputFileRef} type='file' hidden accept="image/*" />
-        <p className={classes.errors}>{formErrors.imageFile}</p>
-		<input type="text" name="name" placeholder="Toilet name" value={formValues.name} onChange={handleChange} />
+		    <input type="text" name="name" placeholder="Establishment name" value={formValues.name} onChange={handleChange} />
         <p className={classes.errors}>{formErrors.name}</p>
-		<input type="text" name="location" placeholder="Location" value={formValues.location} onChange={handleChange} />
+        <input type="text" name="city" placeholder="City" value={formValues.city} onChange={handleChange} />
+        <p className={classes.errors}>{formErrors.city}</p>
+		    <input type="text" name="location" placeholder="Location" value={formValues.location} onChange={handleChange} />
         <p className={classes.errors}>{formErrors.location}</p>
         
-        <div className={classes.toggler}>
-          <h4 className={classes.denominations}>Male</h4>
-          <input type="checkbox" name="gender" value={formValues.gender} onChange={handleChange}/>
-          <h4 className={classes.denominationsf}>Female</h4>
-          <p className={classes.errors}>{formErrors.gender}</p>
-        </div>
         <button type="submit">Add Toilet</button>
 	  </form>
     </div>);

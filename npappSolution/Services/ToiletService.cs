@@ -71,10 +71,10 @@ public class ToiletService : IToiletService
         return updated;
     }
 
-    public async Task<IEnumerable<string>> GetToiletNames(){
+    public async Task<IEnumerable<NameDto>> GetToiletNames(){
 
         var toilets = await _repositoryManager.toiletRepository.getAll();
-        var names = toilets.Select(x => x.name);
+        var names = toilets.Adapt<IEnumerable<NameDto>>().ToList();
 
         return names;
     }

@@ -94,15 +94,33 @@ private readonly IRepositoryManager _repositoryManager;
 
     public async Task<IEnumerable<ReportDto>> GetReports(long toiletId){
 
-        var toilet = await _repositoryManager.toiletRepository.getWithFeedbacks(toiletId);
         List<ReportDto> reportDto = new List<ReportDto>();
+        if(toiletId != -1){
+            var toilet = await _repositoryManager.toiletRepository.getWithFeedbacks(toiletId);
+            reportDto = new List<ReportDto>();
 
-        foreach(Feedback fback in toilet.Feedbacks){
-            Toilet temp = await _repositoryManager.toiletRepository.getById(fback.toiletId);
-            ReportDto dto = fback.Adapt<ReportDto>();
-            dto.name = temp.name;
-            dto.location = temp.location;
-            reportDto.Add(dto);
+            foreach(Feedback fback in toilet.Feedbacks){
+                Toilet temp = await _repositoryManager.toiletRepository.getById(fback.toiletId);
+                ReportDto dto = fback.Adapt<ReportDto>();
+                dto.name = temp.name;
+                dto.location = temp.location;
+                reportDto.Add(dto);
+            }
+        }else{
+            var toilet = await _repositoryManager.toiletRepository.getAllWithFeedbacks();
+            List<Feedback> list = new List<Feedback>();
+
+            foreach(var feedbackList in toilet.Select(x => x.Feedbacks)){
+                list.AddRange(feedbackList);
+            }
+
+            foreach(Feedback fback in list){
+                Toilet temp = await _repositoryManager.toiletRepository.getById(fback.toiletId);
+                ReportDto dto = fback.Adapt<ReportDto>();
+                dto.name = temp.name;
+                dto.location = temp.location;
+                reportDto.Add(dto);
+            }
         }
 
         return reportDto;

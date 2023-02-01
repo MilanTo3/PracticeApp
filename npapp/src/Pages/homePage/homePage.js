@@ -1,17 +1,34 @@
 import classes from "./homePage.module.css";
 import { motion } from 'framer-motion';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { getToilet } from "../../Services/toiletService";
 
 export default function HomePage(){
 
     const [selectedValue, setSelectedValue] = useState('male');
+    const [bind, setBind] = useState({});
+    const [value, setValue] = useState('');
     const navigate = useNavigate();
-    const handleClick = () => navigate('/ratingPage');
+    const id = localStorage.getItem("toiletId");
+    
+    const handleClick = () => navigate('/ratingPage', {
+        state: {
+          gender: selectedValue,
+        }
+    });
 
     const handleChange = (event) => {
         setSelectedValue(event.target.value);
     };
+
+    useEffect(() => {
+
+        getToilet(id).then(function (response){
+            setBind(response["data"]);
+        });
+
+    }, [value]);
 
     return (
         <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} id="container">
@@ -21,9 +38,9 @@ export default function HomePage(){
                 </div>
                 <h3 className={classes.title}>Help us improve our service :)</h3>
                 <div className={`${classes.info}`} style={{background: selectedValue === 'male' ? 'linear-gradient(to bottom, lightBlue, lightGray)' :'linear-gradient(to bottom, pink, lightGray)'}}>
-                    <h3>Establishment: <h5 className={classes.gotinfo}>Seshadri Tower</h5></h3>
-                    <h3>City: <h5 className={classes.gotinfo}>Europolis</h5></h3>
-                    <h3>Location: <h5 className={classes.gotinfo}>The Collective Street 132, Scnd Floor</h5></h3>
+                    <h3>Establishment: <h5 className={classes.gotinfo}>{bind["name"]}</h5></h3>
+                    <h3>City: <h5 className={classes.gotinfo}>{bind["city"]}</h5></h3>
+                    <h3>Location: <h5 className={classes.gotinfo}>{bind["location"]}</h5></h3>
                     <div className={classes.gender}>
                         <div className={`${classes["gender-card"]} ${classes[selectedValue === 'male' ? 'selectedMale' : '']}`} onClick={() => setSelectedValue('male')}>
                             <input className={classes.radioButton}

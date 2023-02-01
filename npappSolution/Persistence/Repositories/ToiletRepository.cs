@@ -39,7 +39,7 @@ public class ToiletRepository: GenericRepository<Toilet>, IToiletRepository
         if(g == null){
             return false;
         }
-        g.gender = toilet.gender;
+        g.city = toilet.city;
         g.name = toilet.name;
         g.location = toilet.location;
 
@@ -55,6 +55,13 @@ public class ToiletRepository: GenericRepository<Toilet>, IToiletRepository
     public async Task<Toilet> getWithFeedbacks(long toiletId){
 
         var t = await dbSet.Where(x => x.toiletId == toiletId).Include(p => p.Feedbacks).FirstOrDefaultAsync();
+
+        return t;
+    }
+
+    public async Task<IEnumerable<Toilet>> getAllWithFeedbacks(){
+
+        var t = await dbSet.Include(p => p.Feedbacks).ToListAsync();
 
         return t;
     }

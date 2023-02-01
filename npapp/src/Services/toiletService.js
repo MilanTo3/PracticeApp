@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://localhost:7093/api/toilet/"
+const baseUrl = "http://localhost:5029/api/toilet/"
 const user = JSON.parse(localStorage.getItem("loggedInUser"));
 const authAxios = axios.create({
 

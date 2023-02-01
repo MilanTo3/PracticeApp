@@ -2,16 +2,29 @@ import { motion } from 'framer-motion';
 import classes from "./ratingPage.module.css";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
+import { sendFeedback } from '../../Services/feedbackService';
 
 export default function RatingPage(){
 
     const [selectedValue, setSelectedValue] = useState('Average');
     const navigate = useNavigate();
+    const location = useLocation();
+    const gender = location.state.gender;
+    
     const handleClick = () => {
         if(selectedValue === "Bad"){
-            navigate("/badRatingPage");
+            navigate("/badRatingPage", { state: { gender: gender, gradeOverall: selectedValue } });
         }else{
-            navigate("/thankYouPage");
+            sendFeedback({ toiletId: localStorage.getItem("toiletId"), gender: gender, gradeOverall: selectedValue }).then(function (response){
+
+                navigate("/thankYouPage", {
+                    state: {
+                      gender: gender,
+                      gradeOverall: selectedValue
+                    }
+                });
+            });
         }
 
     };
