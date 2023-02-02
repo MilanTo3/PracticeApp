@@ -1,12 +1,23 @@
 import { motion } from 'framer-motion';
 import classes from "./reportsPage.module.css";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CustomTable from '../../Components/table/table';
+import { getNames } from '../../Services/toiletService';
 
 export default function ReportsPage(){
 
     const [type, setType] = useState("reports");
+    const [names, setNames] = useState([]);
+    const [vlaue, setValue] = useState();
+
+    useEffect(() => {
+
+        getNames().then(function (response){
+            setNames(response["data"]);
+        });
+
+    }, [vlaue]);
 
     const handleTypeSelect = (ev) => {
 
@@ -19,10 +30,13 @@ export default function ReportsPage(){
             <div className={classes.inputWrap}>
                     <select className={classes.input} onChange={handleTypeSelect}>
                         <option value={"reports"} selected={true}>Individual</option>
-                        <option value={"summary"} >Summary</option>
+                        <option value={"summary"}>Summary</option>
                     </select>
                     <select className={classes.input}>
                         <option selected={true}>All toilets</option>
+                        { names.map((row) => {
+                            <option value={row.toiletId}>{row.name}</option>
+                        }) }
                     </select>
                     <input className={classes.input} type="text" onFocus={(e) => (e.target.type = "date")}
         onBlur={(e) => (e.target.type = "text")} placeholder="Start date" />
@@ -31,7 +45,9 @@ export default function ReportsPage(){
                     <button className={classes.input}>View</button>
             </div>
         </div>
-            <CustomTable dataType={type} />
+        {
+            type === "reports" ? <CustomTable dataType="reports" /> : <CustomTable dataType="summary" />
+        }
     </motion.div>);
 
 }

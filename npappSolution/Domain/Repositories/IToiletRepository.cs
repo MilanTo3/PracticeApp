@@ -7,5 +7,6 @@ public interface IToiletRepository: IGenericRepository<Toilet>
     Task<Toilet> getWithFeedbacks(long toiletId);
     Task<IEnumerable<Toilet>> getAllWithFeedbacks();
     Task<DtoPaginated<Toilet>> GetPaginated(int page, int itemCount, string? searchTerm);
+    Task<DtoPaginated<Toilet>> GetPaginatedForSummary(long id, int page, int itemCount, string? searchTerm);
 
 }

@@ -16,7 +16,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import { getPaginatedToilets, getToilets } from '../../Services/toiletService';
 import BasicModal from '../BasicModal/modal';
 import AddToiletForm from '../addToiletModal/addToilet';
-import { getPaginatedFeedback, getReports } from '../../Services/feedbackService';
+import { getPaginatedFeedback } from '../../Services/feedbackService';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -62,9 +62,9 @@ export default function CustomTable({dataType}) {
     const dict = { "toilets": 0, "reports": 1, "summary": 2 };
     const ind = dict[dataType];
 
-    const headersName = [["Toilet Name", "City", "Location"], //Toilet
-                         ["Toilet Name", "Time", "Overall Rating", "Foul Smell", "Dirty Bowl", "No Paper", "No Soap", "Dirty Floor", "Wet Floor", "Faulty Equipment", "Litter Bin", "No Tissues", "Dirty Basin"],
-                         ["Toilet Name", "Total Grades", "Good", "Average", "Bad"]                      
+    const headersName = [["Establishment", "City", "Location"], //Toilet
+                         ["Establishment", "Time", "Overall Rating", "Foul Smell", "Dirty Bowl", "No Paper", "No Soap", "Dirty Floor", "Wet Floor", "Faulty Equipment", "Litter Bin", "No Tissues", "Dirty Basin"],
+                         ["Establishment", "Location", "Total Grades", "Good", "Average", "Bad"]                      
     ];
     
     const headersKeys = [["name", "city", "location"], //Toilet
@@ -109,12 +109,12 @@ export default function CustomTable({dataType}) {
     React.useEffect(() => {
 
       const data = {
+        reportType : ind,
         page: page,
         itemCount: rowsPerPage,
         searchTerm: text
   
       }
-        
       if(dataType === "toilets"){
 
         getPaginatedToilets(data).then(function (response){
@@ -135,6 +135,17 @@ export default function CustomTable({dataType}) {
             setheaderKeys(headersKeys[ind]);
             setData(rows[ind]);
         });
+      }else if(dataType === "summary"){
+
+        getPaginatedFeedback(data).then(function (response){
+          setData(response["data"].data);
+          setActualLength(response["data"].actualCount);
+          setheaderKeys(headersKeys[ind]);
+        }).catch(function (error){
+          setheaderKeys(headersKeys[ind]);
+          setData(rows[ind]);
+        });
+
       }else{
       
         setheaderKeys(headersKeys[ind]);
