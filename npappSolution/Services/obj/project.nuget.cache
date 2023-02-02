@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YPqRTHUL3/xrUGewPASoQN5gscWHwUxEsB1tbY/iSEWc+Hmn47r39yICWWR2Jx1VeK/VPOAS/lEysZ/wD4PO8g==",
+  "dgSpecHash": "OLz5+ep83R8LR8zpFdpBiUQpqeEy6I5dM5w6r8S+A7fFH58JjGoXN78KMUMKaXfx2I1jL51A2wDnDf7yW/fb5A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj",
+  "projectFilePath": "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Praksa\\.nuget\\packages\\mapster\\7.3.0\\mapster.7.3.0.nupkg.sha512",
     "C:\\Users\\Praksa\\.nuget\\packages\\mapster.core\\1.2.0\\mapster.core.1.2.0.nupkg.sha512",

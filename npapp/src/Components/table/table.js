@@ -7,17 +7,16 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import TableFooter from '@mui/material/TableFooter';
 import TablePagination from '@mui/material/TablePagination';
 import classes from "./table.module.css";
 import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from '@mui/material/InputAdornment';
-import { getToilets } from '../../Services/toiletService';
+import { getPaginatedToilets, getToilets } from '../../Services/toiletService';
 import BasicModal from '../BasicModal/modal';
 import AddToiletForm from '../addToiletModal/addToilet';
-import { getReports } from '../../Services/feedbackService';
+import { getPaginatedFeedback, getReports } from '../../Services/feedbackService';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -39,8 +38,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(name, location, gender) {
-  return { name, location, gender };
+function createData(name, city, location) {
+  return { name, city, location };
 }
 
 function createFeedbackData(name, time, gradeOverall, foulSmell, dirtyBowl, noPaper, noSoap, dirtyFloor, wetFloor, faultyEquipment, litterBin, noTissues, dirtyBasin){
@@ -63,12 +62,12 @@ export default function CustomTable({dataType}) {
     const dict = { "toilets": 0, "reports": 1, "summary": 2 };
     const ind = dict[dataType];
 
-    const headersName = [["Toilet Name", "Location", "Gender"], //Toilet
+    const headersName = [["Toilet Name", "City", "Location"], //Toilet
                          ["Toilet Name", "Time", "Overall Rating", "Foul Smell", "Dirty Bowl", "No Paper", "No Soap", "Dirty Floor", "Wet Floor", "Faulty Equipment", "Litter Bin", "No Tissues", "Dirty Basin"],
                          ["Toilet Name", "Total Grades", "Good", "Average", "Bad"]                      
     ];
     
-    const headersKeys = [["name", "location", "gender"], //Toilet
+    const headersKeys = [["name", "city", "location"], //Toilet
                          ["name", "time", "gradeOverall", "foulSmell", "dirtyBowl", "noPaper", "noSoap", "dirtyFloor", "wetFloor", "faultyEquipment", "litterBin", "noTissues", "dirtyBasin"],
                          ["name", "location", "totalCnt", "goodCnt", "averageCnt", "badCnt"]];
     const idNames = ["toiletId", "feedbackId", "toiletId"];
@@ -86,13 +85,16 @@ export default function CustomTable({dataType}) {
     var headerKey = headersKeys[ind];
     var addmodal = addModals[ind];
     const idName = idNames[ind];
+    var typeTimeout = 0;
 
     const [data, setData] = React.useState([]);
     const [headerKeys, setheaderKeys] = React.useState([]);
 
+    //Pagination and searching.
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
     const [actualLength, setActualLength] = React.useState(0);
+    const [text, setText] = React.useState("");
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -105,31 +107,48 @@ export default function CustomTable({dataType}) {
     };
 
     React.useEffect(() => {
+
+      const data = {
+        page: page,
+        itemCount: rowsPerPage,
+        searchTerm: text
+  
+      }
         
-        if(dataType === "toilets"){
-          getToilets().then(function (response){
-              setData(response["data"]);
-              setheaderKeys(headersKeys[ind]);
-              console.log(response);
-          }).catch(function (error){
-              setheaderKeys(headersKeys[ind]);
-              setData(rows[ind]);
-          });
-        }else if(dataType === "reports"){
-          getReports(-1).then(function (response){
-            setData(response["data"]);
+      if(dataType === "toilets"){
+
+        getPaginatedToilets(data).then(function (response){
+            setData(response["data"].data);
+            setActualLength(response["data"].actualCount);
             setheaderKeys(headersKeys[ind]);
-            console.log(response);
-          }).catch(function (error){
-              setheaderKeys(headersKeys[ind]);
-              setData(rows[ind]);
-          });
-        }else{
-        
+        }).catch(function (error){
+            setheaderKeys(headersKeys[ind]);
+            setData(rows[ind]);
+        });
+      }else if(dataType === "reports"){
+
+        getPaginatedFeedback(data).then(function (response){
+          setData(response["data"].data);
+          setActualLength(response["data"].actualCount);
           setheaderKeys(headersKeys[ind]);
-          setData(rows[ind]);
-        }
-    }, [isOpen]);
+        }).catch(function (error){
+            setheaderKeys(headersKeys[ind]);
+            setData(rows[ind]);
+        });
+      }else{
+      
+        setheaderKeys(headersKeys[ind]);
+        setData(rows[ind]);
+      }
+    }, [text, page, rowsPerPage, isOpen]);
+
+  const handleChange = (e) => {
+    if(typeTimeout) clearTimeout(typeTimeout)
+    typeTimeout = setTimeout(() => {
+      setText(e.target.value);
+    }, 1500);
+    
+  };
 
   return (
     <div>
@@ -146,7 +165,7 @@ export default function CustomTable({dataType}) {
                   <StyledTableCell align="right" colSpan={2}>
                       <Button onClick={() => handleOpenModal()} style={ dataType === "toilets" ? { backgroundColor: "#11362a", color: "white", border: "2px solid lightblue", margin: "1px"} : {display: "none"}}>+ Add New</Button>
                       <TextField 
-                      label="Search Name" size="small" style={{ float: 'right', margin: "1px" }}
+                      label="Search Name" size="small" style={{ float: 'right', margin: "1px" }} onChange={handleChange}
                       InputProps={{ style: {backgroundColor: "white"},
                         endAdornment: (
                           <InputAdornment>

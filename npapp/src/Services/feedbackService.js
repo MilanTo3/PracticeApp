@@ -23,4 +23,8 @@ const getSummary = (id) => {
     return axios.get(baseUrl + "getSummary/" + id);
 }
 
-export {getFeedbacks, getFeedback, sendFeedback, getReports, getSummary};
+const getPaginatedFeedback = (data) => {
+    return axios.get(baseUrl + "getPaginated/", {params: data});
+}
+
+export {getFeedbacks, getFeedback, sendFeedback, getReports, getSummary, getPaginatedFeedback};

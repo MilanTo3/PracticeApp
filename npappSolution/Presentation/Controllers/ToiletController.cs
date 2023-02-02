@@ -83,4 +83,13 @@ public class ToiletController : ControllerBase
         return Ok(retVal);
     }
 
+    [HttpGet]
+    [Route("getPaginated")]
+    public async Task<IActionResult> getPaginated([FromQuery]int page = 0, [FromQuery]int itemCount = 5, [FromQuery] string? searchTerm = null){
+
+        var results = await _serviceManager.ToiletService.GetPaginatedToilets(page, itemCount, searchTerm);
+
+        return Ok(results);
+    }
+
 }

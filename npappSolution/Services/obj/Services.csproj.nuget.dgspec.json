@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj": {}
+    "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj": {}
   },
   "projects": {
     "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Contracts\\Contracts.csproj": {
@@ -174,14 +174,14 @@
         }
       }
     },
-    "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj": {
+    "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj",
+        "projectUniqueName": "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj",
+        "projectPath": "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\Praksa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\obj\\",
+        "outputPath": "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Praksa\\AppData\\Roaming\\NuGet\\NuGet.Config"

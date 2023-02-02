@@ -265,5 +265,8 @@ h1{
 		border-radius: 0px;
 		margin-top: 0px;
 	}
+	body{
+		background-size: 100% 100%;
+	}
 
 }

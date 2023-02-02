@@ -29,4 +29,8 @@ const updateToilet = (formData) => {
     return axios.put(baseUrl, formData);
 }
 
-export {getToilets, getToilet, addToilet, getNames, updateToilet};
+const getPaginatedToilets = (data) => {
+    return axios.get(baseUrl + "getPaginated/", {params: data});
+}
+
+export {getToilets, getToilet, addToilet, getNames, updateToilet, getPaginatedToilets};

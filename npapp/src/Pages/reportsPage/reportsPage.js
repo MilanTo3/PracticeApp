@@ -6,14 +6,20 @@ import CustomTable from '../../Components/table/table';
 
 export default function ReportsPage(){
 
+    const [type, setType] = useState("reports");
+
+    const handleTypeSelect = (ev) => {
+
+        setType(ev.target.value);
+    };
+
     return (<motion.div className={classes.box} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} id="container">
         <p className={classes.managwrite}>Reports administration:</p>
         <div className={`${classes.managwrite}`}>
             <div className={classes.inputWrap}>
-                    <select className={classes.input}>
-                        <option selected={true}>Select type of report</option>
-                        <option value={0}>Individual</option>
-                        <option value={1}>Summary</option>
+                    <select className={classes.input} onChange={handleTypeSelect}>
+                        <option value={"reports"} selected={true}>Individual</option>
+                        <option value={"summary"} >Summary</option>
                     </select>
                     <select className={classes.input}>
                         <option selected={true}>All toilets</option>
@@ -25,7 +31,7 @@ export default function ReportsPage(){
                     <button className={classes.input}>View</button>
             </div>
         </div>
-            <CustomTable dataType={"reports"} />
+            <CustomTable dataType={type} />
     </motion.div>);
 
 }

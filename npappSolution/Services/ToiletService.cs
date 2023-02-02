@@ -78,4 +78,14 @@ public class ToiletService : IToiletService
 
         return names;
     }
+
+    public async Task<DtoPaginated<ToiletDto>> GetPaginatedToilets(int page, int itemCount, string? searchTerm){
+
+        var toiletDto = await _repositoryManager.toiletRepository.GetPaginated(page, itemCount, searchTerm);
+        List<ToiletDto> toiletsDto = toiletDto.Data.Adapt<IEnumerable<ToiletDto>>().ToList();
+
+        var dataDto = new DtoPaginated<ToiletDto>() { Data = toiletsDto, ActualCount = toiletDto.ActualCount };
+
+        return dataDto;
+    }
 }

@@ -15,5 +15,6 @@ public interface IToiletService
     Task<bool> UpdateAsync(ToiletDto dto);
 
     Task<IEnumerable<NameDto>> GetToiletNames();
+    Task<DtoPaginated<ToiletDto>> GetPaginatedToilets(int page, int itemCount, string? searchTerm);
 
 }

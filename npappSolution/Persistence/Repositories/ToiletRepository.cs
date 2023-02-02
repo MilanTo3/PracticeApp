@@ -66,4 +66,21 @@ public class ToiletRepository: GenericRepository<Toilet>, IToiletRepository
         return t;
     }
 
+    public async Task<DtoPaginated<Toilet>> GetPaginated(int page, int itemCount, string? searchTerm){
+
+        IQueryable<Toilet> feedBacks = dbSet;
+
+        if(searchTerm != null){
+            feedBacks = feedBacks.Where(x => x.name.ToLower().Contains(searchTerm.ToLower()));
+            
+        }
+
+        var pageCount = Math.Ceiling((double)(feedBacks.Count() / itemCount));
+        var paginatedDtos = await feedBacks.OrderBy(x => x.name).Skip(page * (int)itemCount).Take((int)itemCount).ToListAsync();
+
+        DtoPaginated<Toilet> paginated = new DtoPaginated<Toilet>(){ Data = paginatedDtos, ActualCount = feedBacks.Count() };
+
+        return paginated;
+    }
+
 }

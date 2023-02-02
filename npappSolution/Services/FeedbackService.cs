@@ -126,4 +126,23 @@ private readonly IRepositoryManager _repositoryManager;
         return reportDto;
     }
 
+    public async Task<DtoPaginated<ReportDto>> GetPaginatedReports(long toiletId, int page, int itemCount, string? searchTerm){
+
+        var reportDto = await _repositoryManager.feedbackRepository.GetPaginated(toiletId, page, itemCount, searchTerm);
+        List<ReportDto> reports = new List<ReportDto>();
+
+        foreach(Feedback fback in reportDto.Data){
+
+            ReportDto dto = fback.Adapt<ReportDto>();
+            dto.name = fback.Toilet.name;
+            dto.location = fback.Toilet.location;
+            reports.Add(dto);
+        }
+
+        var dataDto = new DtoPaginated<ReportDto>() { Data = reports, ActualCount = reportDto.ActualCount };
+
+        return dataDto;
+    }
+
+
 }

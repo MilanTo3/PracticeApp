@@ -91,4 +91,13 @@ public class FeedbackController : ControllerBase
         return Ok(retVal);
     }
 
+    [HttpGet]
+    [Route("getPaginated")]
+    public async Task<IActionResult> getPaginated([FromQuery]long id = -1, [FromQuery]int page = 0, [FromQuery]int itemCount = 5, [FromQuery] string? searchTerm = null){
+
+        var results = await _serviceManager.FeedbackService.GetPaginatedReports(id, page, itemCount, searchTerm);
+
+        return Ok(results);
+    }
+
 }
