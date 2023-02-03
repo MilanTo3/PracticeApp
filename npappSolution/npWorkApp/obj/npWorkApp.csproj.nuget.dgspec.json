@@ -139,8 +139,8 @@
               "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\Persistence.csproj": {
-                "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\Persistence.csproj"
+              "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\Persistence.csproj": {
+                "projectPath": "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\Persistence.csproj"
               },
               "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Presentation\\Presentation.csproj": {
                 "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Presentation\\Presentation.csproj"
@@ -224,14 +224,14 @@
         }
       }
     },
-    "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\Persistence.csproj": {
+    "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\Persistence.csproj",
+        "projectPath": "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\Praksa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\obj\\",
+        "outputPath": "c:\\Users\\Praksa\\Desktop\\np react\\npappSolution\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Praksa\\AppData\\Roaming\\NuGet\\NuGet.Config"

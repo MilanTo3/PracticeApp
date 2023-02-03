@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from 'react-router-dom';
 import Menu from '@mui/material/Menu';
-import Fade from '@mui/material/Fade';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
