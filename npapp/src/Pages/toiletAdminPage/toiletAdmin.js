@@ -13,6 +13,7 @@ export default function ToiletAdmin(){
 
     const [names, setNames] = useState([]);
     const [mount, setMounted] = useState(false);
+    const initVal = { toiletId: -1, sed: null, eed: null };
     
     const getId = (event) => {
         console.log(event.target.id);
@@ -47,7 +48,7 @@ export default function ToiletAdmin(){
                 renderInput={(params) => <TextField {...params} label="Choose toilet" variant='standard' />}
                 />
             </div>
-            <CustomTable dataType={"toilets"} />
+            <CustomTable dataType={"toilets"} filterInfoObj={initVal} />
         </motion.div>
     
     );

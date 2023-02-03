@@ -56,7 +56,7 @@ export default function LogRegPage(){
 			}).catch(function (error){
 				setsnackbarType(1);
 				setsnackbarOpen(true);
-				setsnackbarContent(error.response.data.error);
+				setsnackbarContent("Registration unsuccessfull.");
 			});
 
 			for (const [key, value] of Object.entries(formValues)) {
@@ -85,7 +85,7 @@ export default function LogRegPage(){
 			}).catch(function (error) {
 				setsnackbarType(1);
 				setsnackbarOpen(true);
-				setsnackbarContent(error.response.data.error);
+				setsnackbarContent("Login unsuccessfull.");
 			});
 			setLoginSubmit(false);
 		}

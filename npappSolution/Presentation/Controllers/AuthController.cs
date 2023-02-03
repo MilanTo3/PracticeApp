@@ -44,7 +44,11 @@ public class AuthController : ControllerBase
 
         TokenDto user = await _serviceManager.UserService.LoginUserAsync(loginUser);
 
-        return Ok(user);
+        if(user == null){
+            return BadRequest();
+        }else{
+            return Ok(user);
+        }
     }
 
 }

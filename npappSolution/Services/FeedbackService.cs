@@ -126,9 +126,9 @@ private readonly IRepositoryManager _repositoryManager;
         return reportDto;
     }
 
-    public async Task<DtoPaginated<ReportDto>> GetPaginatedReports(long toiletId, int page, int itemCount, string? searchTerm){
+    public async Task<DtoPaginated<ReportDto>> GetPaginatedReports(long toiletId, int page, int itemCount, DateTime? sed, DateTime? eed, string? searchTerm){
 
-        var reportDto = await _repositoryManager.feedbackRepository.GetPaginated(toiletId, page, itemCount, searchTerm);
+        var reportDto = await _repositoryManager.feedbackRepository.GetPaginated(toiletId, page, itemCount, sed, eed, searchTerm);
         List<ReportDto> reports = new List<ReportDto>();
 
         foreach(Feedback fback in reportDto.Data){
@@ -144,20 +144,22 @@ private readonly IRepositoryManager _repositoryManager;
         return dataDto;
     }
 
-    public async Task<DtoPaginated<SummaryDto>> GetPaginatedSummaries(long toiletId, int page, int itemCount, string? searchTerm){
+    public async Task<DtoPaginated<SummaryDto>> GetPaginatedSummaries(long toiletId, int page, int itemCount, DateTime? sed, DateTime? eed, string? searchTerm){
 
         var reportDto = await _repositoryManager.toiletRepository.GetPaginatedForSummary(toiletId, page, itemCount, searchTerm);
         List<SummaryDto> summaryDtos = new List<SummaryDto>();
 
         foreach(Toilet toilet in reportDto.Data){
             SummaryDto sdto = new SummaryDto() { totalCnt = toilet.Feedbacks.Count,
-                                                 badCnt = toilet.Feedbacks.Where(x => x.gradeOverall.ToLower() == "bad").Count(),
-                                                 averageCnt = toilet.Feedbacks.Where(x => x.gradeOverall.ToLower() == "average").Count(),
-                                                 goodCnt = toilet.Feedbacks.Where(x => x.gradeOverall.ToLower() == "great").Count() };
+                                                badCnt = toilet.Feedbacks.Where(x => x.gradeOverall.ToLower() == "bad").Count(),
+                                                averageCnt = toilet.Feedbacks.Where(x => x.gradeOverall.ToLower() == "average").Count(),
+                                                goodCnt = toilet.Feedbacks.Where(x => x.gradeOverall.ToLower() == "great").Count() };
             sdto.name = toilet.name;
             sdto.location = toilet.location;
             summaryDtos.Add(sdto);
+            
         }
+
 
         DtoPaginated<SummaryDto> reports = new DtoPaginated<SummaryDto>() { Data = summaryDtos, ActualCount = reportDto.ActualCount };
 

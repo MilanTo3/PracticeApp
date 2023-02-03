@@ -39,11 +39,6 @@ public class UserService : IUserService
 
     public async Task<UserDto> CreateAsync(UserDto user, CancellationToken cancellationToken = default) {
 
-        var getted = _repositoryManager.userRepository.GetbyEmail(user.email);
-        if(getted != null){
-            return null;
-        }
-
         var account = user.Adapt<User>();
         account.role = "staff";
         account.password = CryptoService.hashPassword(user.password);
@@ -100,6 +95,8 @@ public class UserService : IUserService
             
             TokenDto userDto = new TokenDto() { id = user.userId, name = user.name, email = user.email, role = user.role, token = tokenHandler.WriteToken(securityToken) };
             return userDto;
+        }else{
+            return null;
         }
 
         return tokendto;

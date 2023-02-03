@@ -16,7 +16,7 @@ public interface IFeedbackService
 
     Task<SummaryDto> GetSummary(long toiletId);
     Task<IEnumerable<ReportDto>> GetReports(long toiletId);
-    Task<DtoPaginated<ReportDto>> GetPaginatedReports(long toiletId, int page, int itemCount, string? searchTerm);
-    Task<DtoPaginated<SummaryDto>> GetPaginatedSummaries(long toiletId, int page, int itemCount, string? searchTerm);
+    Task<DtoPaginated<ReportDto>> GetPaginatedReports(long toiletId, int page, int itemCount, DateTime? sed, DateTime? eed, string? searchTerm);
+    Task<DtoPaginated<SummaryDto>> GetPaginatedSummaries(long toiletId, int page, int itemCount, DateTime? sed, DateTime? eed, string? searchTerm);
 
 }

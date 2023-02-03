@@ -33,7 +33,7 @@ public class FeedbackRepository: GenericRepository<Feedback>, IFeedbackRepositor
         return true;
     }
 
-    public async Task<DtoPaginated<Feedback>> GetPaginated(long toiletId, int page, int itemCount, string? searchTerm){
+    public async Task<DtoPaginated<Feedback>> GetPaginated(long toiletId, int page, int itemCount, DateTime? sed, DateTime? eed, string? searchTerm){
 
         var feedBacks = dbSet.Include(x => x.Toilet).Where(x => x.toiletId == toiletId);
         if(toiletId == -1){
@@ -44,9 +44,16 @@ public class FeedbackRepository: GenericRepository<Feedback>, IFeedbackRepositor
             feedBacks = feedBacks.Where(x => x.Toilet.name.ToLower().Contains(searchTerm.ToLower()));
         }
 
+        if(sed != null){
+            feedBacks = feedBacks.Where(x => x.time >= sed);
+        }
+
+        if(eed != null){
+            feedBacks = feedBacks.Where(x => x.time <= eed);
+        }
+
         var pageCount = Math.Ceiling((double)(feedBacks.Count() / itemCount));
         var paginatedDtos = await feedBacks.OrderBy(x => x.Toilet.name).Skip(page * (int)itemCount).Take((int)itemCount).ToListAsync();
-
         DtoPaginated<Feedback> paginated = new DtoPaginated<Feedback>(){ Data = paginatedDtos, ActualCount = feedBacks.Count() };
 
         return paginated;

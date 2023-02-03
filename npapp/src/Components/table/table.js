@@ -57,7 +57,7 @@ const rows = [
   ]
 ];
 
-export default function CustomTable({dataType}) {
+export default function CustomTable({dataType, filterInfoObj}) {
                         
     const dict = { "toilets": 0, "reports": 1, "summary": 2 };
     const ind = dict[dataType];
@@ -112,9 +112,13 @@ export default function CustomTable({dataType}) {
         reportType : ind,
         page: page,
         itemCount: rowsPerPage,
-        searchTerm: text
-  
+        searchTerm: text,
+        id: filterInfoObj.toiletId,
+        sed: filterInfoObj.sed,
+        eed: filterInfoObj.eed
       }
+      console.log(data);
+
       if(dataType === "toilets"){
 
         getPaginatedToilets(data).then(function (response){

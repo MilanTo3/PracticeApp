@@ -8,6 +8,10 @@ import InputBase from '@mui/material/InputBase';
 import classes from './navbar.module.css';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+import MenuItem from '@mui/material/MenuItem';
+import { useNavigate } from 'react-router-dom';
+import Menu from '@mui/material/Menu';
+import Fade from '@mui/material/Fade';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -54,6 +58,38 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchAppBar() {
 
   const logo = require("../../Assets/qatarlogo (1).png");
+  var name = "";
+  var isLogged = false;
+  const [anchorEl, setAnchorEl] = React.useState(false);
+  const open = Boolean(anchorEl);
+  const loggedUser = JSON.parse(localStorage.getItem("loggedInUser"));
+ 
+  const logout = () => {
+    localStorage.removeItem("loggedInUser");
+    navigate("/");
+    setAnchorEl(null);
+  }
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  var adminOpt = "";
+  var navigate = useNavigate();
+
+  if(loggedUser !== null){
+    name = loggedUser.name;
+    isLogged = true;
+    var role = loggedUser.role;
+    if(role === "admin"){
+      adminOpt = <MenuItem className={classes["dropDown"]} onClick={handleClose}><Link to="/toiletAdmin">Bind device</Link></MenuItem>
+
+    }
+
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -64,10 +100,28 @@ export default function SearchAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <p className={classes.logotext}></p>
           </Typography>
-          <Link to="/logregpage"><Button style={{ backgroundColor: "white", color: "black", fontWeight: "bold" }} className={classes.buttonStyle}
-            id="fade-button"
+          <Link to={loggedUser ? "" : "/logregPage"}><Button id="basic-button"
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick} style={{ backgroundColor: "white", color: "black", fontWeight: "bold" }} className={classes.buttonStyle}
             variant="contained">
-            Staff</Button></Link>
+            {loggedUser ? loggedUser.name : "Staff"}</Button></Link>
+            <div>
+      <Menu style={{ display: loggedUser ? "flex":"none" }}
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}>
+        <MenuItem style={{ display: (loggedUser && (loggedUser.role === "admin")) ? "flex":"none" }} onClick={handleClose}><Link to="/reportsPage">Bind Device</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/reportsPage">Reports</Link></MenuItem>
+        <MenuItem onClick={logout}>Logout</MenuItem>
+      </Menu>
+    </div>
+
         </Toolbar>
       </AppBar>
     </Box>
